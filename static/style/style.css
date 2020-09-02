@@ -1,0 +1,346 @@
+/* GOOGLE FONTS */
+
+@import url('https://fonts.googleapis.com/css?family=Cantarell');
+
+/* GLOBAL */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.red {
+    color: red;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+/* TOP BAR */
+
+.topBar {
+    background-color: #f6f6f6;
+    color: #363636;
+    height: 14vh;
+    min-height: 30px;
+    width: 100%;
+    position: relative;
+}
+
+.topBar .logoContainer {
+    position: absolute;
+    left: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.topBar .logoContainer img {
+    width: 436px;
+    height: 42px;
+}
+
+.topBar .callToMe {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 10vh;
+    width: 30vw;
+    display: grid;
+    grid-template-columns: 50px 180px;
+    grid-template-rows: 4vh 6vh;
+}
+
+.topBar .callToMe h3 {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.topBar .callToMe img {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.topBar .callToMe h4 {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 2em;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* LANDING PAGE */
+
+.landingPage {
+    height: 86vh;
+    position: relative;
+}
+
+.landingPage .landingPageImg {
+    width: 100% !important;
+    height: 86vh !important;
+}
+
+.landingPage .messengerContainer {
+    background-color: rgba(255, 255, 255, .85);
+    width: 30vw;
+    border-radius: 25px;
+    position: absolute;
+    right: 10vw;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6vh 1vw 0 1vw
+}
+
+.landingPage .messengerContainer h2 {
+    font-size: 1em;
+}
+
+.landingPage .messengerContainer h2, .landingPage .messengerContainer h1 {
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Cantarell', sans-serif;
+}
+
+.landingPage .messengerContainer h1 {
+    text-transform: uppercase;
+}
+
+.landingPage .messengerInner {
+    margin: 3vw;
+}
+
+.landingPage .messengerInner a {
+    display: grid;
+    grid-template-columns: 7vw 16vw;
+    grid-template-rows: 10vh;
+    justify-items: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    border-radius: 15px;
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    font-family: 'Cantarell', sans-serif;
+    text-decoration: none;
+}
+
+.landingPage .messengerInner h4 {
+    color: #00b4ff;
+    text-align: center;
+}
+
+.landingPage .messengerInner img {
+    width: 50px;
+    height: 50px;
+}
+
+.landingPage .gatsby-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingPage .haslo {
+    position: absolute;
+    right: 10vw;
+    top: 85%;
+}
+
+/* KORZYSCI */
+
+.korzysci {
+    background-color: #ffffff;
+    font-family: Cantarell, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.korzysci h2, .korzysci h4, .korzysci p {
+    text-align: center;
+    width: 70%;
+    color: #363636;
+}
+
+.korzysci h2 {
+    font-size: 2.5em;
+    padding: 4vh;
+}
+
+.korzysci .korzysciP {
+    padding: 4vh;
+}
+
+.korzysci .propozycjeContainer {
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.korzysci .propozycjeStrzalki {
+    width: 80%;
+    height: 30vh;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 8vw 25vw 8vw 25vw 8vw;
+    grid-template-rows: 12vh 20vh;
+    grid-row-gap: 2vh;
+    justify-items: center;
+    align-items: center;
+}
+
+.korzysci .propozycjeStrzalki .liniaPrzerywana {
+    width: 100% !important;
+}
+
+.korzysci .propozycjeStrzalki .cyfra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #363636;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    font-weight: 100;
+}
+
+.korzysci .iconNumber {
+    width: 100px;
+    height: 100px;
+}
+
+.korzysci .dlonie {
+    grid-column: 3;
+}
+
+.korzysci .zegar {
+    grid-column: 5;
+}
+
+.korzysci .propozycjeContent {
+    display: grid;
+    grid-template-columns: 5vw 14vw 19vw 14vw 19vw 14vw 5vw;
+    grid-template-rows: 12vh 20vh;
+    text-align: center;
+    margin-top: 2vh;
+}
+
+.korzysci .propozycjeContent h3 {
+    text-align: center;
+    font-size: 1em;
+}
+.korzysci .propozycjeContent .h3First {
+    grid-column: 2;
+}
+
+.korzysci .propozycjeContent .h3Second {
+    grid-column: 4;
+}
+
+.korzysci .propozycjeContent .h3Third {
+    grid-column: 6;
+}
+
+.korzysci .propozycjeContent p {
+    width: 100%;
+    font-size: 13px;
+}
+
+.korzysci .propozycjeContent .pFirst {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.korzysci .propozycjeContent .pSecond {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.korzysci .propozycjeContent .pThird {
+    grid-column: 6;
+    grid-row: 2;
+}
+
+/* OFERTA */
+
+.oferta {
+    display: flex;
+    justify-content: center;
+    font-family: Cantarell, sans-serif;
+    margin: 5vh 0;
+    background-color: #ffffff;
+}
+
+.oferta .ofertaGrid .ofertaItem {
+    background-color: #f6f6f6;
+}
+
+.oferta .ofertaGrid {
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(2, 45%);
+    grid-template-rows: repeat(2, 450px);
+    grid-column-gap: 10%;
+    grid-row-gap: 40px;
+}
+
+.oferta .ofertaGrid .ofertaItem .iconSection {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oferta .ofertaGrid .ofertaItem .iconSection > img {
+    width: 150px;
+    height: 150px;
+}
+
+.oferta .ofertaGrid .ofertaItem h4 {
+    background-color: #363636;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-weight: 100;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    margin-bottom: 2vh;
+}
+
+.oferta .ofertaGrid .ofertaItem ul {
+    list-style-type: none;
+    padding-left: 3vw;
+}
+
+.oferta .ofertaGrid .ofertaItem ul li {
+    display: flex;
+    align-items: center;
+    padding: 1vh;
+}
+
+.oferta .ofertaGrid .ofertaItem ul li img {
+    margin-right: 1vw;
+    color: #363636;
+}
