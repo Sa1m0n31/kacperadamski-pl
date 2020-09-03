@@ -135,6 +135,12 @@
 }
 
 @media(max-width: 900px) {
+    /* GLOBAL */
+
+    /* #gatsby-focus-wrapper > div > section.zaufaliNam > div:nth-child(2) {
+        display: none !important;
+    } */
+
     /* LANDING PAGE */
 
     .landingPage .messengerContainer {
@@ -152,5 +158,11 @@
     .oferta .ofertaItem .iconSection > img {
         width: 80px !important;
         height: 80px !important;
+    }
+
+    /* ZAUFALI NAM */
+
+    .slider-wrapper .slider {
+        display: flex !important;
     }
 }

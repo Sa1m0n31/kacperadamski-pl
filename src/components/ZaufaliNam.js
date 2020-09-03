@@ -1,20 +1,36 @@
 import React from "react"
 
 import ReactCardCarousel from 'react-card-carousel';
+import { Carousel } from "react-responsive-carousel";
 
 export default class ZaufaliNam extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            width: 0
+        };
         this.next = this.next.bind(this);
         this.prev = this.prev.bind(this);
         this.afterChange = this.afterChange.bind(this);
     }
 
     componentDidMount() {
-        if(typeof document !== 'undefined') {
+        if((typeof document !== 'undefined')&&(document.querySelector("section.zaufaliNam>div>div>div:nth-child(3)") !== null)) {
             document.querySelector("section.zaufaliNam>div>div>div:nth-child(2)").classList.add('opacity');
             document.querySelector("section.zaufaliNam>div>div>div:nth-child(3)").classList.add('opacity');
+        }
+        if(typeof window !== 'undefined') {
+            this.setState({
+                width: window.innerWidth
+            });
+
+            window.addEventListener("resize", () => {
+                this.setState({
+                    width: window.innerWidth
+                });
+                console.log(this.state.width);
+            });
         }
     }
 
@@ -56,7 +72,7 @@ export default class ZaufaliNam extends React.Component {
     }
 
     afterChange() {
-        if(typeof document !== 'undefined') {
+        if((typeof document !== 'undefined')&&(document.querySelector(`section.zaufaliNam>div>div>div:nth-child(2)`) !== null)) {
             if(this.Carousel.getCurrentIndex() === 0) {
                 document.querySelector(`section.zaufaliNam>div>div>div:nth-child(2)`).classList.add("opacity");
                 document.querySelector(`section.zaufaliNam>div>div>div:nth-child(3)`).classList.add("opacity");
@@ -80,8 +96,11 @@ export default class ZaufaliNam extends React.Component {
             <section className="zaufaliNam">
                 <h2>Zaufali nam</h2>
                 <div style={ZaufaliNam.CONTAINER_STYLE}>
-                    <button className="cardBtn prevBtn" onClick={this.prev}>&lt;</button>
-                    <ReactCardCarousel ref={ Carousel => this.Carousel = Carousel } autoplay={false} autoplay_speed={2500} spread="wide" afterChange={this.afterChange}>
+
+                    {window.innerWidth > 900 ? (<button className="cardBtn prevBtn" onClick={this.prev}>&lt;</button>) : ""}
+
+                    {window.innerWidth > 900 ? (
+                        <ReactCardCarousel className="desktop" ref={ Carousel => this.Carousel = Carousel } autoplay={false} autoplay_speed={2500} spread="wide" afterChange={this.afterChange}>
                         <div style={ZaufaliNam.CARD_STYLE}>
                             <div className="imageSection">
                                 <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
@@ -118,8 +137,46 @@ export default class ZaufaliNam extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </ReactCardCarousel>
-                    <button className="cardBtn nextBtn" onClick={this.next}>></button>
+                    </ReactCardCarousel>) : (<Carousel showArrows={true} showIndicators={false}>
+                        <div>
+                            <div className="imageSection">
+                                <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
+                            </div>
+                            <div className="textSection">
+                                <p>Współpraca z Panem Lukaszem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
+                                <div className="podpis">
+                                    <h5>Steve Jobs</h5>
+                                    <h6>CEO firmy Apple</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="imageSection">
+                                <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
+                            </div>
+                            <div className="textSection">
+                                <p>Współpraca z Panem Lukaszem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
+                                <div className="podpis">
+                                    <h5>Elon Musk</h5>
+                                    <h6>CEO firmy Tesla</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="imageSection">
+                                <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
+                            </div>
+                            <div className="textSection">
+                                <p>Współpraca z Panem Lukaszem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
+                                <div className="podpis">
+                                    <h5>Steve Jobs</h5>
+                                    <h6>CEO firmy Apple</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </Carousel>)}
+
+                    {window.innerWidth > 900 ? (<button className="cardBtn nextBtn" onClick={this.next}>></button>) : ""}
                 </div>
             </section>
         );
