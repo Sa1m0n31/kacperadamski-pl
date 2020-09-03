@@ -1,0 +1,156 @@
+@media(max-width: 700px) {
+    /* TOP BAR */
+
+    .topBar .logoContainer img {
+        width: 150px;
+        height: 15px;
+    }
+
+    .topBar .callToMe {
+        display: flex;
+        width: 50vw;
+        right: 4vw;
+        justify-content: right;
+        align-items: center;
+    }
+
+    .topBar .callToMe img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .topBar .callToMe h3 {
+        display: none;
+    }
+
+    .topBar .callToMe h4 {
+        font-size: 1em;
+    }
+
+
+    /* LANDING PAGE */
+
+
+    /* KORZYSCI */
+
+    .korzysci .korzysciP {
+        padding: 0 0 3vh 0;
+    }
+
+    /* OFERTA */
+
+    .oferta {
+        margin-top: 45vh;
+    }
+}
+
+@media(max-width: 700px) {
+    /* LANDING PAGE */
+
+    .landingPage .messengerContainer {
+        padding: 2vh 1vw 2vh 1vw;
+        width: 80vw !important;
+        top: 55%;
+    }
+
+    .landingPage .messengerContainer .messengerInner {
+        width: 70%;
+    }
+
+    .landingPage .messengerInner a {
+        grid-template-columns: 30% 70%;
+    }
+
+    .landingPage .haslo {
+        display: none;
+    }
+
+
+    /* KORZYSCI */
+
+    .korzysci h2 {
+        width: 90%;
+    }
+
+    .korzysci .iconNumber {
+        width: 50px;
+        height: 50px;
+    }
+
+    .korzysci .propozycjeStrzalki {
+        grid-row-gap: 0;
+    }
+
+    .korzysci .propozycjeContainer {
+        width: 95% !important;
+    }
+
+    .korzysci .propozycjeContent {
+        grid-template-columns: 1vw 14vw 19vw 14vw 19vw 14vw 5vw;
+    }
+
+    /* OFERTA */
+
+    .oferta .ofertaGrid {
+        grid-template-columns: 100% !important;
+        grid-template-rows: repeat(4, 400px);
+    }
+
+    .oferta .ofertaGrid .ofertaItem h4 {
+        text-align: center;
+        font-size: calc(1em + 10 * ((100vw - 300px)/900));
+    }
+
+    .oferta .ofertaGrid .ofertaItem ul li {
+        font-size: 13px;
+    }
+
+    /* KONTAKT */
+
+    .kontakt .kontaktHeader {
+        border-left: 10px solid #e30e32;
+    }
+
+    .kontakt form {
+        width: 100%;
+        padding: 3vh 22px;
+        grid-template-columns: 100%;
+        grid-template-rows: 30px;
+    }
+
+    .kontakt form textarea {
+        grid-column: 1;
+        grid-row: 5;
+    }
+
+    /* ZAUFALI NAM */
+
+    .zaufaliNam > div {
+        width: 50vw !important;
+    }
+
+    .zaufaliNam > div:nth-child(2) > div:nth-child(2) > div {
+        width: 30vw !important;
+    }
+}
+
+@media(max-width: 900px) {
+    /* LANDING PAGE */
+
+    .landingPage .messengerContainer {
+        width: 40vw;
+    }
+
+    .landingPage .messengerContainer img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* OFERTA */
+
+    .oferta .ofertaItem .iconSection > img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+}

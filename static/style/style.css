@@ -8,6 +8,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Cantarell, sans-serif;
 }
 
 body {
@@ -23,15 +24,27 @@ body {
     font-weight: 900;
 }
 
+.opacity {
+    opacity: .25 !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* TOP BAR */
 
 .topBar {
     background-color: #f6f6f6;
     color: #363636;
-    height: 14vh;
+    height: 10vh;
     min-height: 30px;
     width: 100%;
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 .topBar .logoContainer {
@@ -39,11 +52,12 @@ body {
     left: 5vw;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
 }
 
 .topBar .logoContainer img {
-    width: 436px;
-    height: 42px;
+    width: 416px;
+    height: 40px;
 }
 
 .topBar .callToMe {
@@ -52,9 +66,9 @@ body {
     top: 50%;
     transform: translateY(-50%);
     height: 10vh;
-    width: 30vw;
+    width: 22vw;
     display: grid;
-    grid-template-columns: 50px 180px;
+    grid-template-columns: 50px 160px;
     grid-template-rows: 4vh 6vh;
 }
 
@@ -69,14 +83,14 @@ body {
 .topBar .callToMe img {
     grid-column: 1;
     grid-row: 2;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
 }
 
 .topBar .callToMe h4 {
     grid-column: 2;
     grid-row: 2;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 900;
     display: flex;
     align-items: center;
@@ -86,13 +100,13 @@ body {
 /* LANDING PAGE */
 
 .landingPage {
-    height: 86vh;
+    height: 90vh;
     position: relative;
 }
 
 .landingPage .landingPageImg {
     width: 100% !important;
-    height: 86vh !important;
+    height: 90vh !important;
 }
 
 .landingPage .messengerContainer {
@@ -109,7 +123,7 @@ body {
 }
 
 .landingPage .messengerContainer h2 {
-    font-size: 1em;
+    font-size: calc(.8em + 4 * ((100vw - 300px)/1200));
 }
 
 .landingPage .messengerContainer h2, .landingPage .messengerContainer h1 {
@@ -120,6 +134,7 @@ body {
 
 .landingPage .messengerContainer h1 {
     text-transform: uppercase;
+    font-size: calc(.8em + 16 * ((100vw - 300px)/1200));
 }
 
 .landingPage .messengerInner {
@@ -135,9 +150,9 @@ body {
     background-color: #f6f6f6;
     border-radius: 15px;
     opacity: 1;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
     font-family: 'Cantarell', sans-serif;
     text-decoration: none;
 }
@@ -145,6 +160,7 @@ body {
 .landingPage .messengerInner h4 {
     color: #00b4ff;
     text-align: center;
+    font-size: calc(12px + 4 * ((100vw - 300px)/900));
 }
 
 .landingPage .messengerInner img {
@@ -181,12 +197,19 @@ body {
 }
 
 .korzysci h2 {
-    font-size: 2.5em;
     padding: 4vh;
+}
+
+.korzysci h2 {
+    font-size: calc(1.5em + 16 * ((100vw - 700px)/900));
 }
 
 .korzysci .korzysciP {
     padding: 4vh;
+}
+
+.korzysci .korzysciP, .korzysci h4 {
+    font-size: calc(13px + 4 * ((100vw - 700px)/900));
 }
 
 .korzysci .propozycjeContainer {
@@ -247,8 +270,9 @@ body {
 
 .korzysci .propozycjeContent h3 {
     text-align: center;
-    font-size: 1em;
+    font-size: calc(12px + 4 * ((100vw - 700px)/900));
 }
+
 .korzysci .propozycjeContent .h3First {
     grid-column: 2;
 }
@@ -293,6 +317,9 @@ body {
 
 .oferta .ofertaGrid .ofertaItem {
     background-color: #f6f6f6;
+    -webkit-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
 }
 
 .oferta .ofertaGrid {
@@ -327,11 +354,12 @@ body {
     font-size: 1.3em;
     letter-spacing: 1px;
     margin-bottom: 2vh;
+    text-align: center;
 }
 
 .oferta .ofertaGrid .ofertaItem ul {
     list-style-type: none;
-    padding-left: 3vw;
+    padding: 0 0 0 3vw;
 }
 
 .oferta .ofertaGrid .ofertaItem ul li {
@@ -344,3 +372,134 @@ body {
     margin-right: 1vw;
     color: #363636;
 }
+
+/* KONTAKT */
+
+.kontakt {
+    padding: 5vh 15vw;
+}
+
+.kontakt .kontaktHeader {
+    border-left: 22px solid #e30e32;
+    padding: 10px;
+}
+
+.kontakt .kontaktHeader h2 {
+    font-size: calc(1em + 24 *((100vw - 300px)/900));
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-family: Cantarell Bold, sans-serif;
+}
+
+.kontakt .kontaktHeader h3 {
+    font-size: calc(.8em + 4 *((100vw - 300px)/900));
+    font-weight: 100;
+    color: #717171;
+}
+
+.kontakt form {
+    padding: 3vh 32px;
+    width: 60vw;
+    display: grid;
+    grid-template-columns: 20vw 40vw;
+    grid-template-rows: repeat(4, 40px);
+    grid-row-gap: 10px;
+    grid-column-gap: 3vw;
+}
+
+.kontakt form input, .kontakt form textarea {
+    background-color: #f6f6f6;
+    border: none;
+    outline: none;
+    color: #a8a8a8;
+    padding: 2%;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+    resize: none;
+}
+
+.kontakt form input::placeholder, .kontakt form textarea::placeholder {
+    color: #a8a8a8;
+}
+
+.kontakt form input[name="name"] {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.kontakt form textarea {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+}
+
+/* ZAUFALI NAM */
+
+.zaufaliNam {
+    padding: 5vh 10vw;
+    color: #363636;
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.zaufaliNam * {
+    cursor: default !important;
+}
+
+.zaufaliNam h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: calc(1.5em + 24 * ((100vw - 300px)/900));
+    font-weight: 700;
+}
+
+section.zaufaliNam > div > div > div > div {
+    padding-top: 0 !important;
+}
+
+.cardBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 3em;
+    cursor: pointer !important;
+    color: #363636;
+}
+
+.zaufaliNam .imageSection {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    margin-top: -30px;
+    position: relative;
+}
+
+.zaufaliNam .imageSection img {
+    width: 80%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: -40%;
+    transform: translateX(-50%);
+}
+
+.zaufaliNam .textSection {
+    position: relative;
+    height: 200px;
+    padding: 1vh 2vw;
+}
+
+.zaufaliNam .textSection .podpis {
+    position: absolute;
+    bottom: 40px;
+    right: 4vw;
+}
+
+.zaufaliNam > div:nth-child(2) {
+
+}
+

@@ -28,7 +28,7 @@ const LandingPage = () => {
             <h2>Potrzebujesz konsultacji?</h2>
             <h1>Napisz do mnie na messengerze!</h1>
             <div className="messengerInner">
-                <a href="http://m.me/lukasburski">
+                <a href="http://m.me/lukasburski" target="_blank">
                     <img src={require("../../static/img/messenger.png")} alt="messenger" />
                     <h4>Kliknij i napisz wiadomość</h4>
                 </a>
