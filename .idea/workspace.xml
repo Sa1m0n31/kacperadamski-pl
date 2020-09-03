@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e54178ef-a8a1-42d2-88a2-2fbccb670566" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ZaufaliNam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ZaufaliNam.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style/mobile-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/mobile-style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599079001907</updated>
       <workItem from="1599079004722" duration="12304000" />
-      <workItem from="1599124566478" duration="15827000" />
+      <workItem from="1599124566478" duration="16031000" />
     </task>
     <servers />
   </component>

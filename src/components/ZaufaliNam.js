@@ -97,9 +97,9 @@ export default class ZaufaliNam extends React.Component {
                 <h2>Zaufali nam</h2>
                 <div style={ZaufaliNam.CONTAINER_STYLE}>
 
-                    {window.innerWidth > 900 ? (<button className="cardBtn prevBtn" onClick={this.prev}>&lt;</button>) : ""}
+                    {this.state.width > 900 ? (<button className="cardBtn prevBtn" onClick={this.prev}>&lt;</button>) : ""}
 
-                    {window.innerWidth > 900 ? (
+                    {this.state.width > 900 ? (
                         <ReactCardCarousel className="desktop" ref={ Carousel => this.Carousel = Carousel } autoplay={false} autoplay_speed={2500} spread="wide" afterChange={this.afterChange}>
                         <div style={ZaufaliNam.CARD_STYLE}>
                             <div className="imageSection">
@@ -176,7 +176,7 @@ export default class ZaufaliNam extends React.Component {
                         </div>
                     </Carousel>)}
 
-                    {window.innerWidth > 900 ? (<button className="cardBtn nextBtn" onClick={this.next}>></button>) : ""}
+                    {this.state.width > 900 ? (<button className="cardBtn nextBtn" onClick={this.next}>></button>) : ""}
                 </div>
             </section>
         );
