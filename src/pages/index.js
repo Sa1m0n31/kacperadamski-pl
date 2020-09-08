@@ -11,6 +11,8 @@ import Korzysci from "../components/Korzysci";
 import Oferta from "../components/Oferta";
 import Kontakt from "../components/Kontakt";
 import ZaufaliNam from "../components/ZaufaliNam";
+import OMnie from "../components/OMnie";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (<div className="app">
@@ -25,5 +27,7 @@ export default function Home() {
     <Oferta />
     <Kontakt />
     <ZaufaliNam />
+    <OMnie/>
+    <Footer/>
   </div>)
 }

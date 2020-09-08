@@ -93,7 +93,7 @@
 
     .oferta .ofertaGrid {
         grid-template-columns: 100% !important;
-        grid-template-rows: repeat(4, 400px);
+        grid-template-rows: repeat(4, 420px);
     }
 
     .oferta .ofertaGrid .ofertaItem h4 {
@@ -105,24 +105,6 @@
         font-size: 13px;
     }
 
-    /* KONTAKT */
-
-    .kontakt .kontaktHeader {
-        border-left: 10px solid #e30e32;
-    }
-
-    .kontakt form {
-        width: 100%;
-        padding: 3vh 22px;
-        grid-template-columns: 100%;
-        grid-template-rows: 30px;
-    }
-
-    .kontakt form textarea {
-        grid-column: 1;
-        grid-row: 5;
-    }
-
     /* ZAUFALI NAM */
 
     .zaufaliNam > div {
@@ -131,6 +113,16 @@
 
     .zaufaliNam > div:nth-child(2) > div:nth-child(2) > div {
         width: 30vw !important;
+    }
+
+    /* FOOTER */
+
+    footer .left .menuFooter {
+        width: 90%;
+    }
+
+    footer .left .socialMedia {
+        width: 80% !important;
     }
 }
 
@@ -164,5 +156,85 @@
 
     .slider-wrapper .slider {
         display: flex !important;
+    }
+
+    /* KONTAKT */
+
+    .kontakt .kontaktHeader {
+        border-left: 10px solid #e30e32;
+    }
+
+    .kontakt form {
+        width: 100%;
+        padding: 3vh 22px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kontakt form textarea {
+        height: 100px;
+    }
+
+    .kontakt form button {
+        align-self: center;
+        height: 50px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        grid-template-columns: 100%;
+        grid-template-rows: 250px 200px 40px !important;
+    }
+
+    footer .left {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .left .footerLogo {
+        width: 296px;
+    }
+
+    footer .left .menuFooter {
+        width: 60%;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+
+    footer .left .menuFooter li {
+        padding-right: 0;
+    }
+
+    footer .left .socialMedia {
+        padding-top: 20px;
+        width: 50%;
+    }
+
+    footer .right {
+        grid-column: 1;
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+        align-self: center;
+    }
+
+    footer .right button {
+        margin: 10px 0 0 0;
+    }
+
+    footer .bottom {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    footer .bottom h6 {
+        text-align: center;
     }
 }

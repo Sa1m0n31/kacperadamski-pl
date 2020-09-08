@@ -31,6 +31,8 @@ const LandingPage = () => {
                 <a href="http://m.me/lukasburski" target="_blank">
                     <img src={require("../../static/img/messenger.png")} alt="messenger" />
                     <h4>Kliknij i napisz wiadomość</h4>
+                    <div id="translate" />
+                    <a />
                 </a>
             </div>
         </div>

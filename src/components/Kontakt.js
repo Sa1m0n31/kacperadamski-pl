@@ -36,6 +36,10 @@ export default class Kontakt extends React.Component {
                 <input type="email" name="email" placeholder="Adres e-mail" />
                 <input type="text" name="phoneNumber" placeholder="Numer telefonu (opcjonalnie)" />
                 <textarea name="msg" placeholder="Treść wiadomości" />
+                <button type="submit">
+                    <div id="translate" />
+                    <a>Wyślij</a>
+                </button>
             </form>
         </section>);
     }
