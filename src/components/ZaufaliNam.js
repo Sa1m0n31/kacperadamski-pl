@@ -1,22 +1,31 @@
 import React from "react"
 
 import ReactCardCarousel from 'react-card-carousel';
-import { Carousel } from "react-responsive-carousel";
+
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 
 export default class ZaufaliNam extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            width: 0
+            width: 0,
+            slider1: React.createRef(),
+            slider2: React.createRef(),
+            slider3: React.createRef(),
+            currentSlide: 1
         };
         this.next = this.next.bind(this);
         this.prev = this.prev.bind(this);
         this.afterChange = this.afterChange.bind(this);
+        this.sliderBack = this.sliderBack.bind(this);
+        this.sliderNext = this.sliderNext.bind(this);
     }
 
     componentDidMount() {
-        if((typeof document !== 'undefined')&&(document.querySelector("section.zaufaliNam>div>div>div:nth-child(3)") !== null)) {
+        if((typeof document !== 'undefined')&&(document.querySelector("section.zaufaliNam>div>div>div:nth-child(3)") !== null)&&(this.state.width > 900)) {
             document.querySelector("section.zaufaliNam>div>div>div:nth-child(2)").classList.add('opacity');
             document.querySelector("section.zaufaliNam>div>div>div:nth-child(3)").classList.add('opacity');
         }
@@ -34,14 +43,6 @@ export default class ZaufaliNam extends React.Component {
         }
     }
 
-    next() {
-        this.Carousel.next();
-    }
-
-    prev() {
-        this.Carousel.prev();
-    }
-
     static get CONTAINER_STYLE() {
         return {
             position: "relative",
@@ -54,6 +55,12 @@ export default class ZaufaliNam extends React.Component {
             marginTop: "80px"
         };
     }
+
+    static get EMPTY_STYLE() {
+        return {
+            position: "relative"
+        };
+    };
 
     static get CARD_STYLE() {
         return {
@@ -71,8 +78,16 @@ export default class ZaufaliNam extends React.Component {
         };
     }
 
+    next() {
+        this.Carousel.next();
+    }
+
+    prev() {
+        this.Carousel.prev();
+    }
+
     afterChange() {
-        if((typeof document !== 'undefined')&&(document.querySelector(`section.zaufaliNam>div>div>div:nth-child(2)`) !== null)) {
+        if((typeof document !== 'undefined')&&(document.querySelector(`section.zaufaliNam>div>div>div:nth-child(2)`) !== null)&&(this.state.width > 900)) {
             if(this.Carousel.getCurrentIndex() === 0) {
                 document.querySelector(`section.zaufaliNam>div>div>div:nth-child(2)`).classList.add("opacity");
                 document.querySelector(`section.zaufaliNam>div>div>div:nth-child(3)`).classList.add("opacity");
@@ -91,11 +106,44 @@ export default class ZaufaliNam extends React.Component {
         }
     }
 
+    sliderNext() {
+        if(typeof document !== 'undefined') {
+            if(this.state.currentSlide === 3) {
+                this.setState({
+                    currentSlide: 1
+                });
+            }
+            else {
+                this.setState((prevState) => {
+                    return {
+                        currentSlide: prevState.currentSlide + 1
+                    }
+                })
+            }
+        }
+    }
+
+
+    sliderBack() {
+        if(this.state.currentSlide === 1) {
+            this.setState({
+                currentSlide: 3
+            });
+        }
+        else {
+            this.setState((prevState) => {
+                return {
+                    currentSlide: prevState.currentSlide - 1
+                }
+            })
+        }
+    }
+
     render() {
         return (
             <section className="zaufaliNam">
                 <h2>Zaufali nam</h2>
-                <div style={ZaufaliNam.CONTAINER_STYLE}>
+                <div style={this.state.width > 900 ? ZaufaliNam.CONTAINER_STYLE : ZaufaliNam.EMPTY_STYLE}>
 
                     {this.state.width > 900 ? (<button className="cardBtn prevBtn" onClick={this.prev}>&lt;</button>) : ""}
 
@@ -137,20 +185,12 @@ export default class ZaufaliNam extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </ReactCardCarousel>) : (<Carousel showArrows={true} showIndicators={false}>
-                        <div>
-                            <div className="imageSection">
-                                <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
-                            </div>
-                            <div className="textSection">
-                                <p>Współpraca z Panem Lukaszem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
-                                <div className="podpis">
-                                    <h5>Steve Jobs</h5>
-                                    <h6>CEO firmy Apple</h6>
-                                </div>
-                            </div>
+                    </ReactCardCarousel>) : (<div className="mobileSlider">
+                        <div className="arrow leftArrow" onClick={this.sliderBack}>
+                            <img src={require("../../static/img/right.png")} alt="right-arrow" />
                         </div>
-                        <div>
+
+                        <div className={this.state.currentSlide === 1 ? "slider active" : "slider"}>
                             <div className="imageSection">
                                 <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
                             </div>
@@ -162,19 +202,37 @@ export default class ZaufaliNam extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div>
+
+                        <div className={this.state.currentSlide === 2 ? "slider active" : "slider"}>
                             <div className="imageSection">
                                 <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
                             </div>
                             <div className="textSection">
-                                <p>Współpraca z Panem Lukaszem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
+                                <p>Współpraca z Panem Mateuszem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
                                 <div className="podpis">
-                                    <h5>Steve Jobs</h5>
-                                    <h6>CEO firmy Apple</h6>
+                                    <h5>Elon Musk</h5>
+                                    <h6>CEO firmy Tesla</h6>
                                 </div>
                             </div>
                         </div>
-                    </Carousel>)}
+
+                        <div className={this.state.currentSlide === 3 ? "slider active" : "slider"}>
+                            <div className="imageSection">
+                                <img src={require("../../static/img/apple-logo.png")} alt="tesla" />
+                            </div>
+                            <div className="textSection">
+                                <p>Współpraca z Panem Szymonem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
+                                <div className="podpis">
+                                    <h5>Elon Musk</h5>
+                                    <h6>CEO firmy Tesla</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="arrow rightArrow" onClick={this.sliderNext}>
+                            <img src={require("../../static/img/right.png")} alt="right-arrow" />
+                        </div>
+                    </div>)}
 
                     {this.state.width > 900 ? (<button className="cardBtn nextBtn" onClick={this.next}>></button>) : ""}
                 </div>
