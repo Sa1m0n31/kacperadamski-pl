@@ -38,6 +38,34 @@ a {
     display: none;
 }
 
+.grecaptcha-badge {
+    visibility: hidden !important;
+}
+
+/* MODAL TRANSITIONS */
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 500ms ease-in-out;
+    background: rgba(0,0,0,.75) !important;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.ReactModal__Content {
+    position: absolute;
+    z-index: 100 !important;
+}
+
 /* TOP BAR */
 
 .topBar {
@@ -65,13 +93,13 @@ a {
 
 .topBar .callToMe {
     position: absolute;
-    right: 0;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
-    height: 10vh;
+    height: 8vh;
     width: 22vw;
     display: grid;
-    grid-template-columns: 50px 160px;
+    grid-template-columns: 50px 120px;
     grid-template-rows: 4vh 6vh;
 }
 
@@ -81,6 +109,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    font-size: 14px;
 }
 
 .topBar .callToMe img {
@@ -88,15 +117,17 @@ a {
     grid-row: 2;
     width: 80%;
     height: 80%;
+    margin-top: -4px;
+    margin-left: 16px;
 }
 
 .topBar .callToMe h4 {
     grid-column: 2;
     grid-row: 2;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 900;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
 }
 
@@ -142,6 +173,31 @@ a {
 
 .landingPage .messengerInner {
     margin: 3vw;
+}
+
+.landingPage .messengerInner:hover img {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
 
 .landingPage .messengerInner > a {
@@ -329,7 +385,7 @@ a {
     display: grid;
     width: 60%;
     grid-template-columns: repeat(2, 45%);
-    grid-template-rows: repeat(2, 450px);
+    grid-template-rows: repeat(2, 420px);
     grid-column-gap: 10%;
     grid-row-gap: 40px;
 }
@@ -339,6 +395,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .oferta .ofertaGrid .ofertaItem .iconSection > img {
@@ -401,8 +458,8 @@ a {
 }
 
 .kontakt form {
+    position: relative;
     padding: 3vh 32px;
-    width: 60vw;
     display: grid;
     grid-template-columns: 20vw 40vw;
     grid-template-rows: repeat(4, 40px) 50px;
@@ -430,6 +487,10 @@ a {
     cursor: pointer;
 }
 
+.kontakt button:hover {
+    background-color: #B30820;
+}
+
 .kontakt form input, .kontakt form textarea {
     background-color: #f6f6f6;
     border: none;
@@ -454,6 +515,19 @@ a {
 .kontakt form textarea {
     grid-column: 2;
     grid-row: 1 / span 4;
+}
+
+.kontakt .google {
+    font-size: 12px;
+    color: #a8a8a8;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.kontakt .google p {
+    text-align: center;
 }
 
 /* ZAUFALI NAM */
@@ -526,6 +600,10 @@ section.zaufaliNam > div > div > div > div {
     position: absolute;
     bottom: 40px;
     right: 4vw;
+}
+
+#gatsby-focus-wrapper > div > section.zaufaliNam > div > div > div:nth-child(2) {
+    cursor: pointer !important;
 }
 
 /* O MNIE */
@@ -658,6 +736,7 @@ footer .left ul li a:hover {
 }
 
 footer .right {
+    width: 400px;
     grid-row: 1;
     grid-column: 2;
     justify-self: end;
@@ -667,6 +746,11 @@ footer .right {
 footer .right h4 {
     margin-bottom: 10px;
     font-weight: 400;
+}
+
+footer .right form {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 footer .right input {
@@ -685,6 +769,11 @@ footer .right button {
     height: 40px;
     width: 120px;
     margin-left: 20px;
+    cursor: pointer;
+}
+
+footer .right button:hover {
+    background-color: #B30820;
 }
 
 footer .bottom {
@@ -698,5 +787,12 @@ footer .bottom {
 footer .bottom h6 {
     color: #a8a8a8;
     text-align: right;
+}
+
+footer .error {
+    color: red;
+    font-size: 12px;
+    width: 200px;
+    padding: 3px 0;
 }
 

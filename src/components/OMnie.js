@@ -16,6 +16,7 @@ const OMnie = () => {
            window.addEventListener("resize", () => {
                setWidth(window.innerWidth);
            });
+           console.log(width);
        }
     });
 

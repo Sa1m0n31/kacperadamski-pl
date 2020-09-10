@@ -1,7 +1,5 @@
 import React from "react";
 
-import { useStaticQuery, graphql } from "gatsby";
-
 const TopBar = () => {
 
     const scrollToTop = () => {
@@ -20,7 +18,7 @@ const TopBar = () => {
             <div className="callToMe">
                 <h3>Zadzwoń</h3>
                 <img src={require("../../static/img/telefon-ikona.png")} alt="telefon" />
-                <h4><a href="tel:+48600179174">100 200 300</a></h4>
+                <h4><a href="tel:+48728879491">728 879 491</a></h4>
             </div>
     </header>
     );

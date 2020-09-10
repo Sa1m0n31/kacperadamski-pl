@@ -1,3 +1,9 @@
+@media(max-width: 500px) {
+    .oferta .ofertaGrid {
+        grid-template-rows: repeat(2, 370px) !important;
+    }
+}
+
 @media(max-width: 700px) {
     /* TOP BAR */
 
@@ -8,9 +14,9 @@
 
     .topBar .callToMe {
         display: flex;
-        width: 50vw;
+        width: 40vw;
         right: 4vw;
-        justify-content: right;
+        justify-content: flex-end;
         align-items: center;
     }
 
@@ -183,6 +189,14 @@
 
     /* OFERTA */
 
+    .oferta .ofertaGrid {
+        grid-template-rows: repeat(2, 400px);
+    }
+
+    .oferta .ofertaGrid .ofertaItem .iconSection {
+        height: 160px;
+    }
+
     .oferta .ofertaItem .iconSection > img {
         width: 80px !important;
         height: 80px !important;
@@ -232,6 +246,10 @@
     .kontakt form label {
         font-size: 14px;
         color: #717171;
+    }
+
+    .kontakt .google {
+        bottom: -50px;
     }
 
     /* ZAUFALI NAM */
@@ -334,6 +352,11 @@
         text-align: center;
         justify-self: center;
         align-self: center;
+    }
+
+    footer form {
+        flex-direction: column;
+        align-items: center;
     }
 
     footer .right h4 {
