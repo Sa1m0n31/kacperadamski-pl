@@ -14,6 +14,7 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden !important;
 }
 
 .red {
@@ -49,6 +50,9 @@ a {
     transform: translateX(-100px);
     transition: all 500ms ease-in-out;
     background: rgba(0,0,0,.75) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ReactModal__Overlay--after-open {
@@ -62,8 +66,56 @@ a {
 }
 
 .ReactModal__Content {
+    position: relative !important;
+    width: 400px !important;
+    height: 400px !important;
+    z-index: 100 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    padding: 0 !important;
+    overflow: auto !important;
+    background-color: #ffffff;
+}
+
+.ReactModal__Content .modalInner {
+    border: 1px solid #a8a8a8;
+    width: 390px;
+    height: 390px;
     position: absolute;
     z-index: 100 !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.ReactModal__Content .modalInner h2 {
+    font-size: 2.5em;
+    font-weight: 900;
+}
+
+
+.ReactModal__Content .modalInner h3 {
+    font-weight: 400 !important;
+}
+
+.ReactModal__Content .modalInner h2, .ReactModal__Content .modalInner h3 {
+    margin: 20px 0;
+    color: #363636;
+}
+
+.ReactModal__Content .modalExit {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10000 !important;
 }
 
 /* TOP BAR */
@@ -462,14 +514,14 @@ a {
     padding: 3vh 32px;
     display: grid;
     grid-template-columns: 20vw 40vw;
-    grid-template-rows: repeat(4, 40px) 50px;
+    grid-template-rows: repeat(4, 40px) 10px 50px;
     grid-row-gap: 10px;
     grid-column-gap: 3vw;
 }
 
 .kontakt form button {
     grid-column: 1 / span 2;
-    grid-row: 5;
+    grid-row: 6;
     width: 30%;
     justify-self: center;
     border: none;
@@ -512,6 +564,21 @@ a {
     grid-row: 1;
 }
 
+.kontakt form input[name="surname"] {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.kontakt form input[name="email"] {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.kontakt form input[name="phoneNumber"] {
+    grid-column: 1;
+    grid-row: 4;
+}
+
 .kontakt form textarea {
     grid-column: 2;
     grid-row: 1 / span 4;
@@ -530,6 +597,19 @@ a {
     text-align: center;
 }
 
+.kontakt .submitForm {
+    background-color: white;
+}
+
+.kontakt .error {
+    color: red;
+    font-size: 13px;
+    grid-row: 6;
+    grid-column: 1 / span 2;
+    text-align: center;
+    margin-top: -10px;
+}
+
 /* ZAUFALI NAM */
 
 .zaufaliNam {
@@ -539,6 +619,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .zaufaliNam * {

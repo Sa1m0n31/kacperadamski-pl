@@ -2,7 +2,6 @@ import React from "react"
 
 import ReactCardCarousel from 'react-card-carousel';
 
-import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 
@@ -38,7 +37,6 @@ export default class ZaufaliNam extends React.Component {
                 this.setState({
                     width: window.innerWidth
                 });
-                console.log(this.state.width);
             });
         }
     }

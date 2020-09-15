@@ -16,25 +16,20 @@ export default class Kontakt extends React.Component {
             mobile: null,
             status: "",
             isVerified: false,
-            isSend: false
+            isSend: false,
+            formError: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.verifyCallback = this.verifyCallback.bind(this);
         this.resetState = this.resetState.bind(this);
-        if(typeof window !== 'undefined') {
-            this.setState({
-                mobile: window.innerWidth
-            });
-        }
+        this.closeModal = this.closeModal.bind(this);
     }
 
     componentDidMount() {
         if(typeof window !== 'undefined') {
-            window.addEventListener("load", () => {
-                this.setState({
-                    mobile: 1600
-                });
+            this.setState({
+                mobile: window.innerWidth
             });
 
             window.addEventListener("resize", () => {
@@ -61,7 +56,6 @@ export default class Kontakt extends React.Component {
     }
 
     resetState() {
-        console.log("HI!");
         this.setState({
             name: "",
             surname: "",
@@ -71,7 +65,9 @@ export default class Kontakt extends React.Component {
             isVerified: false,
             isSend: true
         });
-        console.log(this.state);
+        if(typeof document !== 'undefined') {
+            document.querySelector(".zaufaliNam").style.zIndex = -10;
+        }
     }
 
     handleChange(e) {
@@ -83,7 +79,47 @@ export default class Kontakt extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        if(this.state.isVerified) {
+        /* Email test */
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(!re.test(String(this.state.email).toLowerCase())) {
+            this.setState({
+                formError: "Niepoprawny adres email"
+            });
+            return 0;
+        }
+        else {
+            this.setState({
+                formError: ""
+            });
+        }
+
+        /* Name test */
+        if(this.state.name === "") {
+            this.setState({
+                formError: "Wpisz swoje imię"
+            });
+            return 0;
+        }
+        else {
+            this.setState({
+                formError: ""
+            })
+        }
+
+        /* Msg test */
+        if(this.state.msg === "") {
+            this.setState({
+                formError: "Zostaw jakąś wiadomość"
+            });
+            return 0;
+        }
+        else {
+            this.setState({
+                formError: ""
+            });
+        }
+
+        if((this.state.isVerified)&&(this.state.formError === "")) {
             const form = e.target;
             const data = {
                 imie: this.state.name,
@@ -92,7 +128,6 @@ export default class Kontakt extends React.Component {
                 email: this.state.email,
                 wiadomosc: this.state.msg
             };
-            console.log(data);
             const xhr = new XMLHttpRequest();
             xhr.open(form.method, form.action);
             xhr.setRequestHeader("Accept", "application/json");
@@ -110,10 +145,25 @@ export default class Kontakt extends React.Component {
         this.resetState();
     }
 
+    closeModal() {
+        this.setState({
+            isSend: false
+        });
+
+        if(typeof document !== 'undefined') {
+            document.querySelector(".zaufaliNam").style.zIndex = 1;
+        }
+    }
+
     render() {
         return (<section className="kontakt">
-            <Modal isOpen={this.state.isSend} closeTimeoutMS={500} onRequestClose={() => { this.setState({ isSend: false }) }} >
-                <h1>Dzięki za kontakt!</h1>
+            <Modal className="submitForm" isOpen={this.state.isSend} closeTimeoutMS={500} onRequestClose={() => this.closeModal()} >
+                <img className="modalExit" src={require("../../static/img/x.png")} alt="exit" onClick={() => this.closeModal()} />
+                <div className="modalInner">
+                    <h2>Formularz wysłany!</h2>
+                    <h3>Odezwę się do Ciebie jak najszybciej!</h3>
+                    <img src={require("../../static/img/okejka.png")} alt="ok" />
+                </div>
             </Modal>
 
             <header className="kontaktHeader">
@@ -140,6 +190,8 @@ export default class Kontakt extends React.Component {
                         onloadCallback={this.recaptchaLoaded}
                     />
                 </div>
+
+                { this.state.formError === "" ? "" : <div className="error">{this.state.formError}</div> }
 
                 <button type="submit">
                     Wyślij

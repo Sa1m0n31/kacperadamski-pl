@@ -63,6 +63,12 @@ export default class Footer extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
+        if(this.state.email === "") {
+            this.setState({
+                emailError: "Wpisz swój adres email"
+            });
+        }
+
         if((this.state.isVerified)&&(this.state.emailError === "")&&(this.state.email !== "")) {
             const form = e.target;
             const data = {
@@ -87,9 +93,15 @@ export default class Footer extends React.Component {
 
     render() {
         return (<footer>
-            <Modal isOpen={this.state.isSend} closeTimeoutMS={500} onRequestClose={() => { this.setState({ isSend: false }) }} >
-                <h1>Dzięki za kontakt!</h1>
+            <Modal className="submitForm" isOpen={this.state.isSend} closeTimeoutMS={500} onRequestClose={() => { this.setState({ isSend: false }) }} >
+                <img className="modalExit" src={require("../../static/img/x.png")} alt="exit" onClick={() => { this.setState({ isSend: false }) }} />
+                <div className="modalInner">
+                    <h2>Formularz wysłany!</h2>
+                    <h3>Odezwę się do Ciebie jak najszybciej!</h3>
+                    <img src={require("../../static/img/okejka.png")} alt="ok" />
+                </div>
             </Modal>
+
 
             <div className="left">
                 <img className="footerLogo" src={require("../../static/img/lukasz-burski-footer.png")} alt="Lukasz Burski" />
