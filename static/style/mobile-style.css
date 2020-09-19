@@ -65,6 +65,10 @@
         display: none;
     }
 
+    .messengerModalInner {
+        margin: 20px 0 !important;
+    }
+
 
     /* KORZYSCI */
 
@@ -143,6 +147,10 @@
 
     .desktopOnly {
         display: none !important;
+    }
+
+    .landingMobileModal .ReactModal__Overlay {
+        opacity: 1 !important;
     }
 
     /* LANDING PAGE */
@@ -256,6 +264,7 @@
         width: 280px !important;
         height: 330px !important;
         overflow: hidden !important;
+        outline: none !important;
     }
 
     .modalInner {
@@ -444,7 +453,7 @@
         display: flex;
         background-color: #dbdbdb;
         color: #5d5d5d;
-        padding: 7px;
+        padding: 12px;
         border-radius: 15px;
     }
 

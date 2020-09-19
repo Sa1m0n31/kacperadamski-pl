@@ -23,6 +23,7 @@ export default class Footer extends React.Component {
 
     componentDidMount() {
         loadReCaptcha("6Le2asoZAAAAAD15aNFRC_BOttySbziLaTDkMmSD");
+        Modal.setAppElement("footer");
     }
 
     verifyCallback(res) {
@@ -148,7 +149,7 @@ export default class Footer extends React.Component {
                     <input type="email" name="email" placeholder="Twój email" onChange={e => this.handleChange(e)} value={this.state.email} />
 
                     <ReCaptcha
-                        siteKey="6Le2asoZAAAAAD15aNFRC_BOttySbziLaTDkMmSD"
+                        siteKey="6Le0HM4ZAAAAAEVWK3sBwHbGzujH0ltNrwDNd_r_"
                         render="implicit"
                         verifyCallback={this.verifyCallback} />
 

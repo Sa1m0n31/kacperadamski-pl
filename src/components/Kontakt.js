@@ -41,6 +41,7 @@ export default class Kontakt extends React.Component {
             console.log(this.state);
         }
         loadReCaptcha("6Le2asoZAAAAAD15aNFRC_BOttySbziLaTDkMmSD");
+        Modal.setAppElement(".kontakt");
     }
 
     recaptchaLoaded() {

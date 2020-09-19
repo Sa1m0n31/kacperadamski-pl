@@ -43,6 +43,10 @@ a {
     visibility: hidden !important;
 }
 
+.landingMobileModal .ReactModal__Overlay {
+    opacity: 0;
+}
+
 /* MODAL TRANSITIONS */
 
 .ReactModal__Overlay {
