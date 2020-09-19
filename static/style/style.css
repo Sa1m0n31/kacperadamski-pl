@@ -890,3 +890,10 @@ footer .error {
     height: 390px !important;
 }
 
+footer .google {
+    font-size: 12px;
+    color: #a8a8a8;
+    margin-top: 5px;
+    text-align: center;
+    width: 340px;
+}

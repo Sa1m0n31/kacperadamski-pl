@@ -13,7 +13,8 @@ export default class Footer extends React.Component {
             email: "",
             isVerified: false,
             isSend: false,
-            emailError: ""
+            emailError: "",
+            status: ""
         };
         this.resetState = this.resetState.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -76,6 +77,7 @@ export default class Footer extends React.Component {
 
         if((this.state.isVerified)&&(this.state.emailError === "")&&(this.state.email !== "")) {
             const form = e.target;
+            console.log(form.method);
             const data = {
                 email: this.state.email
             };
@@ -152,17 +154,23 @@ export default class Footer extends React.Component {
                 <form method="POST" name='Email form' action="https://formspree.io/meqrynkg" onSubmit={e => this.handleSubmit(e)}>
                     <input type="email" name="email" placeholder="Twój email" onChange={e => this.handleChange(e)} value={this.state.email} />
 
-                    <ReCaptcha
-                        siteKey="6Le0HM4ZAAAAAEVWK3sBwHbGzujH0ltNrwDNd_r_"
-                        render="implicit"
-                        verifyCallback={this.verifyCallback}
-                        onloadCallback={this.recaptchaLoaded}
-                    />
+                    <div className="recaptcha">
+                        <ReCaptcha
+                            siteKey="6Le0HM4ZAAAAAEVWK3sBwHbGzujH0ltNrwDNd_r_"
+                            render="implicit"
+                            verifyCallback={this.verifyCallback}
+                            onloadCallback={this.recaptchaLoaded}
+                        />
+                    </div>
 
                     <button type="submit">Potwierdź</button>
 
                     <div className="error">
                         {this.state.emailError}
+                    </div>
+
+                    <div className="google">
+                        <p>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
                     </div>
                 </form>
             </div>
