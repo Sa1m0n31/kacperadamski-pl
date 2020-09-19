@@ -74,7 +74,7 @@ export default class Footer extends React.Component {
             });
         }
 
-        if((this.state.emailError === "")&&(this.state.email !== "")) {
+        if((this.state.isVerified)&&(this.state.emailError === "")&&(this.state.email !== "")) {
             const form = e.target;
             const data = {
                 email: this.state.email
@@ -149,7 +149,7 @@ export default class Footer extends React.Component {
             <div className="right">
                 <h3>Zostaw swojego maila</h3>
                 <h4>Odezwę się do Ciebie najszybciej jak to możliwe</h4>
-                <form method="post" name='Email form' action="https://formspree.io/meqrynkg">
+                <form method="POST" name='Email form' action="https://formspree.io/meqrynkg" onSubmit={e => this.handleSubmit(e)}>
                     <input type="email" name="email" placeholder="Twój email" onChange={e => this.handleChange(e)} value={this.state.email} />
 
                     <ReCaptcha
@@ -159,7 +159,7 @@ export default class Footer extends React.Component {
                         onloadCallback={this.recaptchaLoaded}
                     />
 
-                    <button onClick={e => this.handleSubmit(e)}>Potwierdź</button>
+                    <button type="submit">Potwierdź</button>
 
                     <div className="error">
                         {this.state.emailError}
