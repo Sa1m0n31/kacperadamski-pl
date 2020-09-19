@@ -262,7 +262,6 @@
 
     .ReactModal__Content {
         width: 280px !important;
-        height: 330px !important;
         overflow: hidden !important;
         outline: none !important;
     }

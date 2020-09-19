@@ -21,6 +21,7 @@ export default class ZaufaliNam extends React.Component {
         this.afterChange = this.afterChange.bind(this);
         this.sliderBack = this.sliderBack.bind(this);
         this.sliderNext = this.sliderNext.bind(this);
+        this.cssStyles = this.cssStyles.bind(this);
     }
 
     componentDidMount() {
@@ -72,16 +73,43 @@ export default class ZaufaliNam extends React.Component {
             fontSize: "12px",
             textTransform: "uppercase",
             borderRadius: "10px",
-            boxSizing: "border-box"
+            boxSizing: "border-box",
+            cursor: "pointer"
         };
+    }
+
+    cssStyles() {
+        console.log(this.Carousel.getCurrentIndex());
+        switch(this.Carousel.getCurrentIndex()+2)
+        {
+            case 0:
+                this.state.slider1.current.style.cursor = "default";
+                this.state.slider2.current.style.cursor = "pointer";
+                this.state.slider3.current.style.cursor = "pointer";
+                break;
+            case 1:
+                this.state.slider2.current.style.cursor = "default";
+                this.state.slider1.current.style.cursor = "pointer";
+                this.state.slider3.current.style.cursor = "pointer";
+                break;
+            case 2:
+                this.state.slider3.current.style.cursor = "default";
+                this.state.slider1.current.style.cursor = "pointer";
+                this.state.slider2.current.style.cursor = "pointer";
+                break;
+            default:
+                break;
+        }
     }
 
     next() {
         this.Carousel.next();
+        this.cssStyles();
     }
 
     prev() {
         this.Carousel.prev();
+        this.cssStyles();
     }
 
     afterChange() {
@@ -147,38 +175,38 @@ export default class ZaufaliNam extends React.Component {
 
                     {this.state.width > 900 ? (
                         <ReactCardCarousel className="desktop" ref={ Carousel => this.Carousel = Carousel } autoplay={false} autoplay_speed={2500} spread="wide" afterChange={this.afterChange}>
-                        <div style={ZaufaliNam.CARD_STYLE}>
+                        <div style={ZaufaliNam.CARD_STYLE} ref={this.state.slider1}>
                             <div className="imageSection">
                                 <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
                             </div>
                             <div className="textSection">
                                 <p>Współpraca z Panem Lukaszem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
                                 <div className="podpis">
-                                    <h5>Steve Jobs</h5>
+                                    <h5>1</h5>
                                     <h6>CEO firmy Apple</h6>
                                 </div>
                             </div>
                         </div>
-                        <div style={ZaufaliNam.CARD_STYLE}>
+                        <div style={ZaufaliNam.CARD_STYLE} ref={this.state.slider2}>
                             <div className="imageSection">
                                 <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
                             </div>
                             <div className="textSection">
                                 <p>Współpraca z Panem Lukaszem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
                                 <div className="podpis">
-                                    <h5>Elon Musk</h5>
+                                    <h5>2</h5>
                                     <h6>CEO firmy Tesla</h6>
                                 </div>
                             </div>
                         </div>
-                        <div style={ZaufaliNam.CARD_STYLE}>
+                        <div style={ZaufaliNam.CARD_STYLE} ref={this.state.slider3}>
                             <div className="imageSection">
                                 <img src={require("../../static/img/tesla-logo.jpg")} alt="tesla" />
                             </div>
                             <div className="textSection">
                                 <p>Współpraca z Panem Lukaszem to czysta przyjemność. Spoko z niego ziomek i ogólnie pozdro z fartem.</p>
                                 <div className="podpis">
-                                    <h5>Steve Jobs</h5>
+                                    <h5>3</h5>
                                     <h6>CEO firmy Apple</h6>
                                 </div>
                             </div>

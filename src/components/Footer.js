@@ -22,7 +22,7 @@ export default class Footer extends React.Component {
     }
 
     componentDidMount() {
-        loadReCaptcha("6Le2asoZAAAAAD15aNFRC_BOttySbziLaTDkMmSD");
+        loadReCaptcha("6Le0HM4ZAAAAAEVWK3sBwHbGzujH0ltNrwDNd_r_");
         Modal.setAppElement("footer");
     }
 
@@ -32,6 +32,10 @@ export default class Footer extends React.Component {
                 isVerified: true
             });
         }
+    }
+
+    recaptchaLoaded() {
+        console.log("Recaptcha loaded");
     }
 
     resetState() {
@@ -70,7 +74,7 @@ export default class Footer extends React.Component {
             });
         }
 
-        if((this.state.isVerified)&&(this.state.emailError === "")&&(this.state.email !== "")) {
+        if((this.state.emailError === "")&&(this.state.email !== "")) {
             const form = e.target;
             const data = {
                 email: this.state.email
@@ -94,7 +98,7 @@ export default class Footer extends React.Component {
 
     render() {
         return (<footer>
-            <Modal className="submitForm" isOpen={this.state.isSend} closeTimeoutMS={500} onRequestClose={() => { this.setState({ isSend: false }) }} >
+            <Modal className="submitForm" isOpen={this.state.isSend} closeTimeoutMS={500} onRequestClose={() => { this.setState({ isSend: false }) }} portalClassName="footerModal" >
                 <img className="modalExit" src={require("../../static/img/x.png")} alt="exit" onClick={() => { this.setState({ isSend: false }) }} />
                 <div className="modalInner">
                     <h2>Formularz wysłany!</h2>
@@ -151,7 +155,9 @@ export default class Footer extends React.Component {
                     <ReCaptcha
                         siteKey="6Le0HM4ZAAAAAEVWK3sBwHbGzujH0ltNrwDNd_r_"
                         render="implicit"
-                        verifyCallback={this.verifyCallback} />
+                        verifyCallback={this.verifyCallback}
+                        onloadCallback={this.recaptchaLoaded}
+                    />
 
                     <button onClick={e => this.handleSubmit(e)}>Potwierdź</button>
 

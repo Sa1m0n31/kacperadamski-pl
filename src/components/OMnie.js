@@ -8,6 +8,7 @@ const OMnie = () => {
     let [width, setWidth] = useState(1600);
 
     useEffect(() => {
+       setWidth(window.innerWidth);
        if(typeof window !== 'undefined') {
            window.addEventListener("load", () => {
                setWidth(window.innerWidth);

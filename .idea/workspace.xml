@@ -5,7 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Kontakt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Kontakt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LandingPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OMnie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OMnie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ZaufaliNam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ZaufaliNam.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/style/mobile-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/mobile-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/style.css" afterDir="false" />
     </list>
@@ -84,7 +85,7 @@
       <workItem from="1600078776314" duration="9000" />
       <workItem from="1600202142106" duration="9132000" />
       <workItem from="1600281943806" duration="59000" />
-      <workItem from="1600507978648" duration="2183000" />
+      <workItem from="1600507978648" duration="4733000" />
     </task>
     <servers />
   </component>

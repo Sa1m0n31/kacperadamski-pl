@@ -158,7 +158,7 @@ export default class Kontakt extends React.Component {
 
     render() {
         return (<section className="kontakt">
-            <Modal className="submitForm" isOpen={this.state.isSend} closeTimeoutMS={500} onRequestClose={() => this.closeModal()} >
+            <Modal className="submitForm" isOpen={this.state.isSend} closeTimeoutMS={500} onRequestClose={() => this.closeModal()} portalClassName="submitFormModal">
                 <img className="modalExit" src={require("../../static/img/x.png")} alt="exit" onClick={() => this.closeModal()} />
                 <div className="modalInner">
                     <h2>Formularz wysłany!</h2>
