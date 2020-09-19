@@ -23,7 +23,7 @@ export default class Footer extends React.Component {
     }
 
     componentDidMount() {
-        loadReCaptcha("6Le0HM4ZAAAAAEVWK3sBwHbGzujH0ltNrwDNd_r_");
+        loadReCaptcha("6Le2asoZAAAAAD15aNFRC_BOttySbziLaTDkMmSD");
         Modal.setAppElement("footer");
     }
 
@@ -151,12 +151,12 @@ export default class Footer extends React.Component {
             <div className="right">
                 <h3>Zostaw swojego maila</h3>
                 <h4>Odezwę się do Ciebie najszybciej jak to możliwe</h4>
-                <form method="POST" name='Email form' action="https://formspree.io/meqrynkg" onSubmit={e => this.handleSubmit(e)}>
+                <form method="POST" action="https://formspree.io/meqrynkg" onSubmit={e => this.handleSubmit(e)}>
                     <input type="email" name="email" placeholder="Twój email" onChange={e => this.handleChange(e)} value={this.state.email} />
 
                     <div className="recaptcha">
                         <ReCaptcha
-                            siteKey="6Le0HM4ZAAAAAEVWK3sBwHbGzujH0ltNrwDNd_r_"
+                            siteKey="6Le2asoZAAAAAD15aNFRC_BOttySbziLaTDkMmSD"
                             render="implicit"
                             verifyCallback={this.verifyCallback}
                             onloadCallback={this.recaptchaLoaded}
