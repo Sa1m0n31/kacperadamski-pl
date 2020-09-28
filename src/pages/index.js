@@ -26,7 +26,7 @@ export default function Home() {
     <Korzysci />
     <Oferta />
     <Kontakt />
-    <ZaufaliNam />
+    {/*<ZaufaliNam />*/}
     <OMnie/>
     <Footer/>
   </div>)

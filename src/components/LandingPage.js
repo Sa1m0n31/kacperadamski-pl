@@ -49,7 +49,7 @@ const LandingPage = () => {
     });
 
     return (<header className="landingPage">
-        <Modal isOpen={open} className="messengerModal mobileOnly" closeTimeoutMS={500} onRequestClose={() => { setOpen(false); }} portalClassName="landingMobileModal">
+        <Modal isOpen={open} className="messengerModal mobileOnly" onRequestClose={() => { setOpen(false); }} portalClassName="landingMobileModal">
             <img className="modalExit" src={require("../../static/img/krzyzyk-szary.png")} alt="exit" onClick={() => { setOpen(false); }} />
             <img className="messengerBlue" src={require("../../static/img/messsenger.png")} alt="messenger" />
             <h2>Napisz do mnie na messengerze!</h2>

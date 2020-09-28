@@ -333,6 +333,16 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 500px;
+    position: relative;
+}
+
+.korzysci .propozycjeContainer .overlayPropozycje {
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    position: absolute;
+    z-index: 300;
 }
 
 .korzysci .propozycjeStrzalki {
@@ -721,6 +731,7 @@ section.zaufaliNam > div > div > div > div {
     grid-template-columns: 45vw 45vw;
     grid-template-rows: 100%;
     grid-column-gap: 5vw;
+    height: 600px;
 }
 
 .omnieInner .omnieTekst {
@@ -766,6 +777,14 @@ section.zaufaliNam > div > div > div > div {
     color: #363636;
     font-size: calc(13px + 10 * ((100vw - 400px)/1200));
     font-weight: 400;
+}
+
+.overlayOMnie {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    z-index: 100;
+    background-color: white;
 }
 
 /* FOOTER */

@@ -168,10 +168,6 @@ export default class Footer extends React.Component {
                     <div className="error">
                         {this.state.emailError}
                     </div>
-
-                    <div className="google">
-                        <p>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
-                    </div>
                 </form>
             </div>
             <div className="bottom">

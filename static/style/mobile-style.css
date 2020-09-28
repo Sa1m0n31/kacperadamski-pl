@@ -30,7 +30,7 @@
     }
 
     .topBar .callToMe h4 {
-        font-size: 1em;
+        font-size: 14px;
     }
 
 
@@ -96,8 +96,10 @@
     /* OFERTA */
 
     .oferta .ofertaGrid {
-        grid-template-columns: 100% !important;
+        grid-template-columns: 75% !important;
         grid-template-rows: repeat(4, 420px);
+        width: 100% !important;
+        justify-content: center;
     }
 
     .oferta .ofertaGrid .ofertaItem h4 {
@@ -430,8 +432,6 @@
 
     .messengerModal .messengerBlue {
         margin-top: 10px;
-        width: 100px;
-        height: 100px;
     }
 
     .messengerModal h2 {
@@ -444,7 +444,7 @@
     .messengerModal h3 {
         font-weight: 400 !important;
         text-align: center;
-        margin-bottom: 35px;
+        margin: 20px 0 20px 0;
         font-size: 14px;
     }
 

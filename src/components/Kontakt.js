@@ -4,6 +4,9 @@ import { ReCaptcha, loadReCaptcha } from 'react-recaptcha-v3';
 
 import Modal from 'react-modal';
 
+import { gsap, ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
+
 export default class Kontakt extends React.Component {
     constructor(props) {
         super(props);
@@ -17,7 +20,9 @@ export default class Kontakt extends React.Component {
             status: "",
             isVerified: false,
             isSend: false,
-            formError: ""
+            formError: "",
+            form: React.createRef(),
+            kontaktHeader: React.createRef()
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,6 +47,19 @@ export default class Kontakt extends React.Component {
         }
         loadReCaptcha("6Le2asoZAAAAAD15aNFRC_BOttySbziLaTDkMmSD");
         Modal.setAppElement(".kontakt");
+
+        gsap.fromTo(this.state.form.current, { opacity: 0 }, { opacity: 1, duration: 2, scrollTrigger: {
+            trigger: ".kontakt",
+                start: "top 60%",
+                end: "top 40%",
+                scrub: 1
+            } });
+        gsap.fromTo(this.state.kontaktHeader.current, {opacity: 0}, {opacity: 1, duration: 2, scrollTrigger: {
+            trigger: ".kontakt",
+                start: "top 70%",
+                end: "top, 50%",
+                scrub: 1
+            }})
     }
 
     recaptchaLoaded() {
@@ -167,11 +185,11 @@ export default class Kontakt extends React.Component {
                 </div>
             </Modal>
 
-            <header className="kontaktHeader">
+            <header ref={this.state.kontaktHeader} className="kontaktHeader">
                 <h2>Zostaw kontakt</h2>
                 <h3>Wypełnij i wyślij formularz, a ja odezwę się do Ciebie</h3>
             </header>
-            <form method="POST" onSubmit={e => this.handleSubmit(e)} action="https://formspree.io/xgengdkz">
+            <form ref={this.state.form} method="POST" onSubmit={e => this.handleSubmit(e)} action="https://formspree.io/xgengdkz">
                 <label htmlFor="name" className="mobileOnly">Twoje imię</label>
                 <input type="text" name="name" value={this.state.name} placeholder={this.state.mobile < 900 ? "" : "Imię"} onChange={e => this.handleChange(e)} />
                 <label htmlFor="surname" className="mobileOnly">Nazwisko (opcjonalnie)</label>
@@ -197,10 +215,6 @@ export default class Kontakt extends React.Component {
                 <button type="submit">
                     Wyślij
                 </button>
-
-                <div className="google">
-                    <p>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
-                </div>
             </form>
         </section>);
     }

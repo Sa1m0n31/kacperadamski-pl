@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e54178ef-a8a1-42d2-88a2-2fbccb670566" name="Default Changelist" comment="" />
+    <list default="true" id="e54178ef-a8a1-42d2-88a2-2fbccb670566" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Kontakt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Kontakt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Korzysci.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Korzysci.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LandingPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OMnie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OMnie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Oferta.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Oferta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style/mobile-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/mobile-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +49,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -77,7 +91,19 @@
       <workItem from="1600078776314" duration="9000" />
       <workItem from="1600202142106" duration="9132000" />
       <workItem from="1600281943806" duration="59000" />
-      <workItem from="1600507978648" duration="6675000" />
+      <workItem from="1600507978648" duration="8038000" />
+      <workItem from="1600549064549" duration="581000" />
+      <workItem from="1600549744250" duration="110000" />
+      <workItem from="1600550624563" duration="13000" />
+      <workItem from="1600554577333" duration="32000" />
+      <workItem from="1600554742602" duration="5000" />
+      <workItem from="1600629899419" duration="6000" />
+      <workItem from="1600633215594" duration="7000" />
+      <workItem from="1600639717885" duration="95000" />
+      <workItem from="1600802144823" duration="624000" />
+      <workItem from="1600806141491" duration="22000" />
+      <workItem from="1600890065649" duration="908000" />
+      <workItem from="1601318467965" duration="7653000" />
     </task>
     <servers />
   </component>
@@ -85,10 +111,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1600282001185">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1600548361467">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600282001185" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600548361467" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1599132583933">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

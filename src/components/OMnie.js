@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from 'gatsby-image';
 
+import { gsap, ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger);
 
 const OMnie = () => {
 
@@ -37,14 +39,28 @@ const OMnie = () => {
         }
     }}`);
 
+    const overlay = useRef(null);
+
+    useEffect(() => {
+        gsap.to(overlay.current, {scaleY: 0, transformOrigin: "100% 100%", duration: 1, scrollTrigger: {
+            trigger: ".omnieSection",
+                start: "top 50%"
+            }})
+    }, []);
+
     return (<section className="omnieSection">
         {width > 900 ? (<div className="omnieInner">
+            <div ref={overlay} className="overlayOMnie" />
             <div className="omnieImgContainer">
                 <Img className="omnieImg" fluid={data.landingPage.childImageSharp.fluid} alt="marketing" />
             </div>
             <div className="omnieTekst">
-                <h2 className="omnieHeader"><span className="opacityh2">Cześć, witajcie! Nazywam się</span><br/><span className="superBold">Łukasz Burski</span><br/><span className='opacityh2'>i jestem waszym marketingowcem</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed dolor turpis. Pellentesque convallis consequat varius. In hac habitasse platea dictumst. Morbi porta vestibulum pulvinar. Suspendisse sodales mi ut malesuada placerat. Integer euismod convallis leo eget maximus. Nam fringilla massa non faucibus vehicula. Suspendisse potenti. Nam et euismod magna, a laoreet sem. Nunc fermentum, diam in consectetur tincidunt, dui neque luctus augue, ac malesuada felis sem in dui. Praesent ac sollicitudin magna, id aliquet massa. Sed tincidunt fringilla urna, nec interdum sapien commodo eget. Proin ultrices a turpis in congue.</p>
+                <h2 className="omnieHeader"><span className="opacityh2">Hej! Nazywam się</span><br/><span className="superBold">Kacper Adamski</span><br/><span className='opacityh2'>i jestem tu po to, by Ci pomóc</span></h2>
+                <p>
+                    Mam 31 lat. W 2016 roku ukończyłem studia na kierunku zarządzanie na Uniwersytecie Mikołaja Kopernika w Toruniu.
+                    Marketingiem zajmuje się zawodowo od ponad pięciu lat, jednak dziedzina ta to przede wszystkim moja życiowa pasja.
+                    Skontaktuj się ze mną, a razem wyprowadzimy Twoją firmę na marketingowe szczyty!
+                </p>
                 <div className="hasloReklamowe">
                     <h2>Biznes bez marketingu?</h2>
                     <h3>Promowanie biznesu to bardzo ważna rzecz.<br/>Pomogę Ci osiągnąć Twoje cele i rozkręcić Twój biznes.</h3>
@@ -56,7 +72,11 @@ const OMnie = () => {
                 <Img className="omnieImg" imgStyle={{objectPosition: '90% 80%'}} fluid={data.landingPage.childImageSharp.fluid} alt="marketing" />
             </div>
             <div className="omnieTekst">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed dolor turpis. Pellentesque convallis consequat varius. In hac habitasse platea dictumst. Morbi porta vestibulum pulvinar. Suspendisse sodales mi ut malesuada placerat. Integer euismod convallis leo eget maximus. Nam fringilla massa non faucibus vehicula. Suspendisse potenti. Nam et euismod magna, a laoreet sem. Nunc fermentum, diam in consectetur tincidunt, dui neque luctus augue, ac malesuada felis sem in dui. Praesent ac sollicitudin magna, id aliquet massa. Sed tincidunt fringilla urna, nec interdum sapien commodo eget. Proin ultrices a turpis in congue.</p>
+                <p>
+                    Mam 31 lat. W 2016 roku ukończyłem studia na kierunku zarządzanie na Uniwersytecie Mikołaja Kopernika w Toruniu.
+                    Marketingiem zajmuje się zawodowo od ponad pięciu lat, jednak dziedzina ta to przede wszystkim moja życiowa pasja.
+                    Skontaktuj się ze mną, a razem wyprowadzimy Twoją firmę na marketingowe szczyty!
+                </p>
             </div>
         </div>)}
 
