@@ -6,14 +6,12 @@ const Korzysci = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const header = useRef(null);
-    const textHeader = useRef(null);
     const propozycje = useRef(null);
 
     useEffect(() => {
         gsap.to(propozycje.current, { scaleX: 0, transformOrigin: "0% 0%", duration: 1, scrollTrigger: {
             trigger: ".korzysci",
-                start: "top 50%",
-                markers: true
+                start: "top 50%"
             } })
     }, []);
 
@@ -23,8 +21,8 @@ const Korzysci = () => {
             <h3>Kacper Adamski</h3>
             <h4>Twoja marka w Internecie</h4>
         </div>
-        <h2 ref={header}>Co mogę Ci <span className="red">zaproponować</span>?</h2>
-        <p ref={header} className="korzysciP">Sprawdź moją ofertę i skontaktuj się ze mną aby dobrać <span className="bold">najskuteczniejsze</span> dla ustalonych przez Ciebie celów działania</p>
+        <h2>Co mogę Ci <span className="red">zaproponować</span>?</h2>
+        <p className="korzysciP">Sprawdź moją ofertę i skontaktuj się ze mną aby dobrać <span className="bold">najskuteczniejsze</span> dla ustalonych przez Ciebie celów działania</p>
         <div className="propozycjeContainer">
             <div className="overlayPropozycje" ref={propozycje} />
             <div className="propozycjeStrzalki">
