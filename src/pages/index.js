@@ -5,7 +5,6 @@ import '../../static/style/mobile-style.css';
 
 import Helmet from 'react-helmet';
 
-import TopBar from "../components/TopBar";
 import LandingPage from "../components/LandingPage";
 import Korzysci from "../components/Korzysci";
 import Oferta from "../components/Oferta";
@@ -21,7 +20,6 @@ export default function Home() {
       <meta charSet="utf-8" />
       <meta name="description" content="Twój marketingowiec" />
     </Helmet>
-    <TopBar />
     <LandingPage />
     <Korzysci />
     <Oferta />

@@ -11,16 +11,15 @@ const Oferta = () => {
     const rightBottom = useRef(null);
 
     useEffect(() => {
-        const tl = gsap.timeline();
-        gsap.fromTo(leftTop.current, { x: "-=800", y: "-=200" }, { x: "0", y: "0", duration: 1, scrollTrigger: {trigger: ".ofertaGrid",
-                start: "top, 70%"} });
-        gsap.fromTo(rightTop.current, { x: "+=800", y: "-=200" }, { x: "0", y: "0", duration: 1, scrollTrigger: {
+        gsap.fromTo(leftTop.current, { x: "-=800", rotate: -30 }, { x: "0", rotate: 0, duration: 1, scrollTrigger: {trigger: ".ofertaGrid",
+                start: "top, 70%", once: false} });
+        gsap.fromTo(rightTop.current, { x: "+=800", rotate: 30}, { x: "0", rotate: 0, duration: 1, scrollTrigger: {
                 trigger: ".ofertaGrid",
                 start: "top, 70%"
             } });
-        gsap.fromTo(leftBottom.current, { x: "-=800", y: "+=200" }, { x: "0", y: "0", duration: 1, scrollTrigger: {trigger: ".ofertaGrid",
+        gsap.fromTo(leftBottom.current, { x: "-=800", rotate: -30}, { x: "0", rotate: 0, duration: 1, scrollTrigger: {trigger: ".ofertaGrid",
                 start: "top, 20%"} });
-        gsap.fromTo(rightBottom.current, { x: "+=800", y: "+=200" }, { x: "0", y: "0", duration: 1, scrollTrigger: {
+        gsap.fromTo(rightBottom.current, { x: "+=800", rotate: 30}, { x: "0", rotate: 0, duration: 1, scrollTrigger: {
                 trigger: ".ofertaGrid",
                 start: "top, 20%"
             } });

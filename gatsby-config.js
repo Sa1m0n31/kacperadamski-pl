@@ -10,13 +10,13 @@ module.exports = {
   plugins: [
       'gatsby-plugin-sharp',
       'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: `img`,
-        path: path.join(__dirname, 'static', `img`)
-      }
-    },
+      {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+              name: `img`,
+              path: path.join(__dirname, 'static', `img`)
+          }
+      },
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {

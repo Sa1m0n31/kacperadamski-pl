@@ -6,13 +6,19 @@ const Korzysci = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const header = useRef(null);
+    const caption = useRef(null);
     const propozycje = useRef(null);
 
     useEffect(() => {
-        gsap.to(propozycje.current, { scaleX: 0, transformOrigin: "0% 0%", duration: 1, scrollTrigger: {
+        console.log(header.current);
+        gsap.fromTo([header.current, caption.current], {opacity: 0}, {opacity: 1, duration: 1, scrollTrigger: {
             trigger: ".korzysci",
-                start: "top 50%"
-            } })
+            start: "top 90%"
+            }});
+        gsap.fromTo(propozycje.current, {opacity: 0}, {opacity: 1, duration: 2, scrollTrigger: {
+            trigger: ".korzysci",
+            start: "top 80%"
+            }});
     }, []);
 
 
@@ -21,10 +27,9 @@ const Korzysci = () => {
             <h3>Kacper Adamski</h3>
             <h4>Twoja marka w Internecie</h4>
         </div>
-        <h2>Co mogę Ci <span className="red">zaproponować</span>?</h2>
-        <p className="korzysciP">Sprawdź moją ofertę i skontaktuj się ze mną aby dobrać <span className="bold">najskuteczniejsze</span> dla ustalonych przez Ciebie celów działania</p>
-        <div className="propozycjeContainer">
-            <div className="overlayPropozycje" ref={propozycje} />
+        <h2 ref={header}>Co mogę Ci <span className="red">zaproponować</span>?</h2>
+        <p ref={caption} className="korzysciP">Sprawdź moją ofertę i skontaktuj się ze mną aby dobrać <span className="bold">najskuteczniejsze</span> dla ustalonych przez Ciebie celów działania</p>
+        <div ref={propozycje} className="propozycjeContainer">
             <div className="propozycjeStrzalki">
                 <div className="cyfra desktopOnly">1</div>
                 <img className="liniaPrzerywana desktopOnly" src={require("../../static/img/linia-przerywana.png")} alt="linia-przerywana" />

@@ -1,6 +1,7 @@
 /* GOOGLE FONTS */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* GLOBAL */
 
@@ -123,165 +124,20 @@ a {
     z-index: 10000 !important;
 }
 
-/* TOP BAR */
-
-.topBar {
-    background-color: #f6f6f6;
-    color: #363636;
-    height: 10vh;
-    min-height: 30px;
-    width: 100%;
-    z-index: 10;
-    position: relative;
-}
-
-.topBar .logoContainer {
-    position: absolute;
-    left: 5vw;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.topBar .logoContainer img {
-    width: 416px;
-    height: 40px;
-}
-
-.topBar .callToMe {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 8vh;
-    width: 22vw;
-    display: grid;
-    grid-template-columns: 50px 120px;
-    grid-template-rows: 4vh 6vh;
-}
-
-.topBar .callToMe h3 {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 14px;
-}
-
-.topBar .callToMe img {
-    grid-column: 1;
-    grid-row: 2;
-    width: 80%;
-    height: 80%;
-    margin-top: -4px;
-    margin-left: 16px;
-}
-
-.topBar .callToMe h4 {
-    grid-column: 2;
-    grid-row: 2;
-    font-size: 1.3em;
-    font-weight: 900;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-}
-
 /* LANDING PAGE */
 
 .landingPage {
-    height: 90vh;
+    height: 100vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
 }
 
 .landingPage .landingPageImg {
     width: 100% !important;
-    height: 90vh !important;
-}
-
-.landingPage .messengerContainer {
-    background-color: rgba(255, 255, 255, .85);
-    width: 30vw;
-    border-radius: 25px;
-    position: absolute;
-    right: 10vw;
-    top: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 6vh 1vw 0 1vw
-}
-
-.landingPage .messengerContainer h2 {
-    font-size: calc(.8em + 4 * ((100vw - 300px)/1200));
-}
-
-.landingPage .messengerContainer h2, .landingPage .messengerContainer h1 {
-    text-align: center;
-    letter-spacing: 2px;
-    font-family: 'Cantarell', sans-serif;
-}
-
-.landingPage .messengerContainer h1 {
-    text-transform: uppercase;
-    font-size: calc(.8em + 16 * ((100vw - 300px)/1200));
-}
-
-.landingPage .messengerInner {
-    margin: 3vw;
-}
-
-.landingPage .messengerInner:hover img {
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-
-@keyframes shake {
-    10%, 90% {
-        transform: translate3d(-1px, 0, 0);
-    }
-
-    20%, 80% {
-        transform: translate3d(2px, 0, 0);
-    }
-
-    30%, 50%, 70% {
-        transform: translate3d(-4px, 0, 0);
-    }
-
-    40%, 60% {
-        transform: translate3d(4px, 0, 0);
-    }
-}
-
-.landingPage .messengerInner > a {
-    display: grid;
-    grid-template-columns: 7vw 16vw;
-    grid-template-rows: 10vh;
-    justify-items: center;
-    align-items: center;
-    background-color: #f6f6f6;
-    border-radius: 15px;
-    opacity: 1;
-    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
-    box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
-    font-family: 'Cantarell', sans-serif;
-    text-decoration: none;
-}
-
-.landingPage .messengerInner h4 {
-    color: #00b4ff;
-    text-align: center;
-    font-size: calc(12px + 4 * ((100vw - 300px)/900));
-}
-
-.landingPage .messengerInner img {
-    width: 50px;
-    height: 50px;
+    height: 100vh !important;
 }
 
 .landingPage .gatsby-image-wrapper {
@@ -290,10 +146,111 @@ a {
     align-items: center;
 }
 
-.landingPage .haslo {
+.landingPage .topMenu {
     position: absolute;
-    right: 10vw;
-    top: 85%;
+    margin: 50px 100px 50px 100px;
+    display: flex;
+    width: calc(100% - 200px);
+}
+
+.landingPage .topMenu h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.landingPage .topMenu menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+}
+
+.landingPage .topMenu menu h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    margin: 0 40px;
+}
+
+.landingPage .landingContent {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 100px;
+    top: 270px;
+}
+
+.landingPage .green {
+    color: #27E59E;
+}
+
+.landingPage .landingContent h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: calc(30px + 65 * ((100vw - 700px)/(1300)));
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    margin: 20px 0;
+    display: flex;
+}
+
+.landingPage .landingContent h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 2px;
+    background: #27E59E;
+}
+
+.landingPage .landingContent h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 100;
+    font-size: calc(16px + 20 * ((100vw - 700px)/(1300)));
+    opacity: 0;
+}
+
+.landingPage .landingContent .wspolpracaBtn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    width: 300px;
+    height: 70px;
+    border-radius: 70px;
+    border: 1px solid #27E59E;
+    background: transparent;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 50px;
+    cursor: pointer;
+    opacity: 0;
+    outline: none;
+}
+
+@media(min-width: 2000px) {
+    .landingPage .landingContent h1 {
+        font-size: 70px;
+    }
+
+    .landingPage .landingContent h2 {
+        font-size: 27px;
+    }
+
+    .landingPage .topMenu h2 {
+        font-size: 30px;
+    }
+
+    .landingPage .topMenu menu h3 {
+        font-size: 20px;
+    }
+
+    .landingPage .landingContent .wspolpracaBtn {
+        font-size: 25px;
+    }
 }
 
 /* KORZYSCI */
