@@ -9,8 +9,10 @@ import { gsap } from "gsap/all";
 
 import Typewriter from 'typewriter-effect';
 
-const LandingPage = () => {
+import $ from 'jquery';
+import 'jquery-scrollify';
 
+const LandingPage = () => {
     const data = useStaticQuery(graphql`
         query SliderQuery {
     landingPage: file(relativePath: { eq: "wiezowiec.png" }) {
@@ -53,14 +55,19 @@ const LandingPage = () => {
         }
     }
 
-    return (<header className="landingPage">
+    const handleScroll = (arg) => {
+        if(arg === "oferta") $.scrollify.move(1);
+        else if(arg === "oMnie") $.scrollify.move(4);
+    }
+
+    return (<header className="landingPage section">
         <Img className="landingPageImg" imgStyle={{objectPosition: '80% 0%'}} fluid={data.landingPage.childImageSharp.fluid} alt="marketing" />
         <div className="topMenu">
             <h2>KacperAdamski.pl</h2>
             <menu className="menu">
                 <h3>Strona główna</h3>
-                <h3>Oferta</h3>
-                <h3>O mnie</h3>
+                <h3 onClick={() => handleScroll("oferta")}>Oferta</h3>
+                <h3 onClick={() => handleScroll("oMnie")}>O mnie</h3>
             </menu>
         </div>
         <div className="landingContent">

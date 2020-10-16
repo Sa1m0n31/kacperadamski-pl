@@ -3,6 +3,9 @@ import { useStaticQuery, graphql } from "gatsby";
 import Img from 'gatsby-image';
 
 import { gsap, ScrollTrigger } from 'gsap/all';
+import Modal from "react-modal";
+import {Link} from "react-scroll";
+import {ReCaptcha} from "react-recaptcha-v3";
 gsap.registerPlugin(ScrollTrigger);
 
 const OMnie = () => {
@@ -39,18 +42,8 @@ const OMnie = () => {
         }
     }}`);
 
-    const overlay = useRef(null);
-
-    useEffect(() => {
-        gsap.to(overlay.current, {scaleY: 0, transformOrigin: "100% 100%", duration: 1, scrollTrigger: {
-            trigger: ".omnieSection",
-                start: "top 50%"
-            }})
-    }, []);
-
-    return (<section className="omnieSection">
+    return (<section className="omnieSection section" id="omnieSection">
         {width > 900 ? (<div className="omnieInner">
-            <div ref={overlay} className="overlayOMnie" />
             <div className="omnieImgContainer">
                 <Img className="omnieImg" fluid={data.landingPage.childImageSharp.fluid} alt="marketing" />
             </div>
@@ -79,6 +72,59 @@ const OMnie = () => {
                 </p>
             </div>
         </div>)}
+
+        <footer>
+            <div className="left">
+                <img className="footerLogo" src={require("../../static/img/lukasz-burski-footer.png")} alt="Lukasz Burski" />
+                <ul className="menuFooter">
+                    <li>
+                        <Link
+                            activeClass="active"
+                            to="kontakt"
+                            smooth={true}
+                            duration={500}>Kontakt</Link>
+                    </li>
+                    <li>
+                        <Link
+                            activeClass="active"
+                            to="omnieSection"
+                            smooth={true}
+                            duration={200}>O mnie</Link>
+                    </li>
+                    <li>
+                        <Link
+                            activeClass="active"
+                            to="oferta"
+                            smooth={true}
+                            duration={500}>Oferta</Link>
+                    </li>
+                    <li>
+                        <Link
+                            activeClass="active"
+                            to="zaufaliNam"
+                            smooth={true}
+                            duration={500}>Referencje</Link>
+                    </li>
+                </ul>
+                <div className="socialMedia">
+                    <img src={require("../../static/img/facebook.png")} alt="facebook" />
+                    <img src={require("../../static/img/instagram.png")} alt="instagram" />
+                    <img src={require("../../static/img/linked.png")} alt="linkedin" />
+                </div>
+            </div>
+            <div className="right">
+                <h3>Zostaw swojego maila</h3>
+                <h4>Odezwę się do Ciebie najszybciej jak to możliwe</h4>
+                <form method="POST" action="https://formspree.io/meqrynkg" >
+                    <input type="email" name="email" placeholder="Twój email" />
+                    <button type="submit">Potwierdź</button>
+                </form>
+            </div>
+            <div className="bottom">
+                <h6>Copyright &copy; LukaszBurski.pl</h6>
+                <h6>Designed and created by <a href="https://stronnnka.pl" target="_blank">stronnnka.pl</a></h6>
+            </div>
+        </footer>
 
     </section>)
 };

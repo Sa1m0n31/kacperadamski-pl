@@ -22,12 +22,12 @@ const Korzysci = () => {
     }, []);
 
 
-    return (<section className="korzysci">
+    return (<section className="korzysci section">
         <div className="mobileOnly korzysciHeader">
             <h3>Kacper Adamski</h3>
             <h4>Twoja marka w Internecie</h4>
         </div>
-        <h2 ref={header}>Co mogę Ci <span className="red">zaproponować</span>?</h2>
+        <h2 ref={header}>Co mogę Ci <span className="greenFont">zaproponować</span>?</h2>
         <p ref={caption} className="korzysciP">Sprawdź moją ofertę i skontaktuj się ze mną aby dobrać <span className="bold">najskuteczniejsze</span> dla ustalonych przez Ciebie celów działania</p>
         <div ref={propozycje} className="propozycjeContainer">
             <div className="propozycjeStrzalki">

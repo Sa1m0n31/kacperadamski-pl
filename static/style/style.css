@@ -19,8 +19,8 @@ html, body {
     max-width: 100%;
 }
 
-.red {
-    color: red;
+.greenFont {
+    color: #27E59E;
 }
 
 .bold {
@@ -47,6 +47,27 @@ a {
 
 .landingMobileModal .ReactModal__Overlay {
     opacity: 0;
+}
+
+.dots {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.dots .dotItem {
+    width: 15px;
+    height: 15px;
+    background: #363636;
+    border-radius: 50%;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.dots .dotItem:first-child {
+    background: #27E59E;
 }
 
 /* MODAL TRANSITIONS */
@@ -172,6 +193,25 @@ a {
     font-weight: 100;
     font-size: 20px;
     margin: 0 40px;
+    position: relative;
+    padding: 0 0 5px 0;
+    cursor: pointer;
+}
+
+.landingPage .topMenu menu h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #27E59E;
+    transform: scaleX(0);
+    transition: .4s transform;
+}
+
+.landingPage .topMenu menu h3:hover::after {
+    transform: scaleX(1);
 }
 
 .landingPage .landingContent {
@@ -229,6 +269,27 @@ a {
     cursor: pointer;
     opacity: 0;
     outline: none;
+    position: relative;
+    overflow: hidden !important;
+}
+
+.landingPage .landingContent .wspolpracaBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    border-radius: 70px;
+    background: #27E59E;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: 0;
+    transition: .5s;
+}
+
+.landingPage .landingContent .wspolpracaBtn:hover::before {
+    transform: scaleX(1);
 }
 
 @media(min-width: 2000px) {
@@ -392,10 +453,17 @@ a {
 
 .oferta {
     display: flex;
-    justify-content: center;
     font-family: Cantarell, sans-serif;
     padding: 5vh 0;
     background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+}
+
+.oferta h2 {
+    font-size: 50px;
+    margin: 50px;
+    color: #363636;
 }
 
 .oferta .ofertaGrid .ofertaItem {
@@ -403,19 +471,33 @@ a {
     -webkit-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
     -moz-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
     box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+    width: 15vw;
+    margin: 20px;
+}
+
+@media(min-width: 2000px) {
+    .oferta .ofertaGrid .ofertaItem {
+        background-color: #f6f6f6;
+        -webkit-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+        -moz-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+        box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+        width: 300px;
+        margin: 20px;
+    }
 }
 
 .oferta .ofertaGrid {
-    display: grid;
-    width: 60%;
-    grid-template-columns: repeat(2, 45%);
-    grid-template-rows: repeat(2, 420px);
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    /* grid-template-columns: repeat(2, 45%);
+    grid-template-rows: repeat(2, 320px);
     grid-column-gap: 10%;
-    grid-row-gap: 40px;
+    grid-row-gap: 40px; */
 }
 
 .oferta .ofertaGrid .ofertaItem .iconSection {
-    height: 200px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -423,8 +505,8 @@ a {
 }
 
 .oferta .ofertaGrid .ofertaItem .iconSection > img {
-    width: 150px;
-    height: 150px;
+    width: 70px;
+    height: 70px;
 }
 
 .oferta .ofertaGrid .ofertaItem h4 {
@@ -433,9 +515,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 50px;
     font-weight: 100;
-    font-size: 1.3em;
+    font-size: 1.1em;
     letter-spacing: 1px;
     margin-bottom: 2vh;
     text-align: center;
@@ -443,13 +525,15 @@ a {
 
 .oferta .ofertaGrid .ofertaItem ul {
     list-style-type: none;
-    padding: 0 0 0 3vw;
+    margin-bottom: 25px;
 }
 
 .oferta .ofertaGrid .ofertaItem ul li {
     display: flex;
     align-items: center;
-    padding: 1vh;
+    justify-content: center;
+    margin: 10px 0;
+    text-align: center;
 }
 
 .oferta .ofertaGrid .ofertaItem ul li img {
@@ -464,7 +548,7 @@ a {
 }
 
 .kontakt .kontaktHeader {
-    border-left: 22px solid #e30e32;
+    border-left: 22px solid #27E59E;
     padding: 10px;
 }
 
@@ -500,7 +584,7 @@ a {
     outline: none;
     height: 80%;
     color: white;
-    background-color: #e30e32;
+    background-color: #27E59E;
     margin-top: 20px;
     text-transform: uppercase;
     font-weight: 900;
@@ -512,7 +596,7 @@ a {
 }
 
 .kontakt button:hover {
-    background-color: #B30820;
+    background-color: #16D48D;
 }
 
 .kontakt form input, .kontakt form textarea {
@@ -698,7 +782,7 @@ section.zaufaliNam > div > div > div > div {
 .omnieInner .omnieHeader, .omnieInnerMobile .omnieHeader {
     color: #363636;
     margin: 20px 0;
-    border-left: 22px solid #e30e32;
+    border-left: 22px solid #27E59E;
     padding-left: 15px;
 }
 
@@ -717,7 +801,7 @@ section.zaufaliNam > div > div > div > div {
 }
 
 .omnieInner .hasloReklamowe {
-    border-bottom: 3px solid #e30e32;
+    border-bottom: 3px solid #27E59E;
     margin: 100px 0 100px 37px;
     width: max-content;
     padding-bottom: 5px;

@@ -1,31 +1,15 @@
 import React, { useEffect, useRef } from "react";
 
-import { gsap, ScrollTrigger } from 'gsap/all';
 
 const Oferta = () => {
-    gsap.registerPlugin(ScrollTrigger);
 
     const leftTop = useRef(null);
     const leftBottom = useRef(null);
     const rightTop = useRef(null);
     const rightBottom = useRef(null);
 
-    useEffect(() => {
-        gsap.fromTo(leftTop.current, { x: "-=800", rotate: -30 }, { x: "0", rotate: 0, duration: 1, scrollTrigger: {trigger: ".ofertaGrid",
-                start: "top, 70%", once: false} });
-        gsap.fromTo(rightTop.current, { x: "+=800", rotate: 30}, { x: "0", rotate: 0, duration: 1, scrollTrigger: {
-                trigger: ".ofertaGrid",
-                start: "top, 70%"
-            } });
-        gsap.fromTo(leftBottom.current, { x: "-=800", rotate: -30}, { x: "0", rotate: 0, duration: 1, scrollTrigger: {trigger: ".ofertaGrid",
-                start: "top, 20%"} });
-        gsap.fromTo(rightBottom.current, { x: "+=800", rotate: 30}, { x: "0", rotate: 0, duration: 1, scrollTrigger: {
-                trigger: ".ofertaGrid",
-                start: "top, 20%"
-            } });
-    }, []);
-
-    return (<section className="oferta">
+    return (<section className="oferta section" id="oferta">
+        <h2>Oferta</h2>
         <div className="ofertaGrid">
             <div ref={leftTop} className="ofertaItem">
                 <div className="iconSection">
@@ -33,9 +17,9 @@ const Oferta = () => {
                 </div>
                 <h4>Strony internetowe</h4>
                 <ul className="optionsSection">
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Strony portfolio</li>
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Strony wizytówki</li>
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Inne strony</li>
+                    <li>Strony portfolio</li>
+                    <li>Strony wizytówki</li>
+                    <li>Inne strony</li>
                 </ul>
             </div>
 
@@ -45,9 +29,9 @@ const Oferta = () => {
                 </div>
                 <h4>Reklamy</h4>
                 <ul className="optionsSection">
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Facebook Ads</li>
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Google Ads</li>
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Kampanie reklamowe</li>
+                    <li>Facebook Ads</li>
+                    <li>Google Ads</li>
+                    <li>Kampanie reklamowe</li>
                 </ul>
             </div>
 
@@ -57,9 +41,9 @@ const Oferta = () => {
                 </div>
                 <h4>Konsultacje</h4>
                 <ul className="optionsSection">
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Marka osobista</li>
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Firma</li>
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Doradztwo marketingowe</li>
+                    <li>Marka osobista</li>
+                    <li>Firma</li>
+                    <li>Doradztwo marketingowe</li>
                 </ul>
             </div>
 
@@ -69,9 +53,9 @@ const Oferta = () => {
                 </div>
                 <h4>Copywriting</h4>
                 <ul className="optionsSection">
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Leady</li>
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Slogany reklamowe</li>
-                    <li><img src={require("../../static/img/strzalka.png")} alt="strzalka" />Teksty blogowe</li>
+                    <li>Leady</li>
+                    <li>Slogany reklamowe</li>
+                    <li>Teksty blogowe</li>
                 </ul>
             </div>
         </div>
