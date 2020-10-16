@@ -11,9 +11,10 @@ export default function Home() {
 
   return (<div className="app">
     <Helmet>
-      <title>LukaszBurski.pl</title>
+      <title>Kacper Adamski</title>
       <meta charSet="utf-8" />
-      <meta name="description" content="Twój marketingowiec" />
+      <meta name="description" content="Rozwiązania marketingowe dla Twojego biznesu." />
+      <link rel="icon" type="icon/png" href={require("../../static/img/online-marketing.png")} sizes="16x16" />
     </Helmet>
     <App />
   </div>)

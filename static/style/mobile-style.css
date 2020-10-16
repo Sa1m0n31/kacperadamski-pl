@@ -1,6 +1,6 @@
 @media(max-width: 500px) {
     .oferta .ofertaGrid {
-        grid-template-rows: repeat(2, 370px) !important;
+
     }
 }
 
@@ -97,7 +97,6 @@
 
     .oferta .ofertaGrid {
         grid-template-columns: 75% !important;
-        grid-template-rows: repeat(4, 420px);
         width: 100% !important;
         justify-content: center;
     }
@@ -128,6 +127,7 @@
     .zaufaliNam > div:nth-child(2) > div:nth-child(2) > div {
         width: 30vw !important;
     }
+
 
     /* FOOTER */
 
@@ -200,7 +200,14 @@
     /* OFERTA */
 
     .oferta .ofertaGrid {
-        grid-template-rows: repeat(2, 400px);
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        grid-row-gap: 40px;
+    }
+
+    .oferta .ofertaGrid .ofertaItem {
+        width: 100%;
+        margin: 0;
     }
 
     .oferta .ofertaGrid .ofertaItem .iconSection {
@@ -339,6 +346,23 @@
         bottom: 20px !important;
     }
 
+    /* O MNIE */
+
+    .omnieSection {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .omnieSection .omnieInnerMobile {
+        width: 90vw;
+        margin-bottom: 50px;
+    }
+
+    .omnieSection .omnieInnerMobile .omnieTekst {
+        margin-top: 20px;
+    }
+
     /* FOOTER */
 
     footer {
@@ -468,7 +492,7 @@
     }
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 1200px) and (min-width: 900px) {
     /* O MNIE */
 
     .omnieInnerMobile {
@@ -489,5 +513,16 @@
         text-align: justify;
         padding: 15px;
         margin-bottom: 30px;
+    }
+
+    /* OFERTA */
+
+    .oferta .ofertaGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 30%);
+    }
+
+    .oferta .ofertaGrid .ofertaItem {
+        width: 100%;
     }
 }

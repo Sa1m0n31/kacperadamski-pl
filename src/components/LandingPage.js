@@ -9,9 +9,6 @@ import { gsap } from "gsap/all";
 
 import Typewriter from 'typewriter-effect';
 
-import $ from 'jquery';
-import 'jquery-scrollify';
-
 const LandingPage = () => {
     const data = useStaticQuery(graphql`
         query SliderQuery {
@@ -48,16 +45,11 @@ const LandingPage = () => {
 
     }
 
-    const goToForm = () => {
+    const goTo = (arg) => {
         if(typeof document !== 'undefined') {
-            const el = document.querySelector(".kontakt");
+            const el = document.querySelector(arg);
             el.scrollIntoView({behavior: "smooth"});
         }
-    }
-
-    const handleScroll = (arg) => {
-        if(arg === "oferta") $.scrollify.move(1);
-        else if(arg === "oMnie") $.scrollify.move(4);
     }
 
     return (<header className="landingPage section">
@@ -66,8 +58,8 @@ const LandingPage = () => {
             <h2>KacperAdamski.pl</h2>
             <menu className="menu">
                 <h3>Strona główna</h3>
-                <h3 onClick={() => handleScroll("oferta")}>Oferta</h3>
-                <h3 onClick={() => handleScroll("oMnie")}>O mnie</h3>
+                <h3 onClick={() => goTo(".oferta")}>Oferta</h3>
+                <h3 onClick={() => goTo(".omnieSection")}>O mnie</h3>
             </menu>
         </div>
         <div className="landingContent">
@@ -81,9 +73,8 @@ const LandingPage = () => {
                 }}
             />
             </h1>
-            {/* <h1 ref={h1}>Rozwiązania marketingowe<span className="green">.</span></h1> */}
             <h2 ref={h2}>Promowanie biznesu to bardzo ważna rzecz.<br/>Pomogę Ci osiągnąć Twoje cele i rozkręcić Twój interes.</h2>
-            <button ref={btn} className="wspolpracaBtn" onClick={goToForm}>Współpraca</button>
+            <button ref={btn} className="wspolpracaBtn" onClick={() => goTo(".kontakt")}>Współpraca</button>
         </div>
     </header>)
 };

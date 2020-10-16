@@ -1,17 +1,47 @@
 import React, { useEffect, useRef } from "react";
 
+import { gsap, ScrollTrigger, Bounce } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger, Bounce);
 
 const Oferta = () => {
 
-    const leftTop = useRef(null);
-    const leftBottom = useRef(null);
-    const rightTop = useRef(null);
-    const rightBottom = useRef(null);
+    const one = useRef(null);
+    const two = useRef(null);
+    const three = useRef(null);
+    const four = useRef(null);
+
+    useEffect(() => {
+        const tl = gsap.timeline();
+
+        gsap.set([one.current, two.current, three.current, four.current], { x: -3000, opacity: 0 });
+
+        gsap.to(four.current, { x: 0, duration: 0.5, opacity: 1, scrollTrigger: {
+                trigger: ".oferta",
+                start: "top 50%"
+            } });
+
+        gsap.to(three.current, { x: 0, duration: 0.5, opacity: 1, delay: 0.5, scrollTrigger: {
+                trigger: ".oferta",
+                start: "top 50%"
+            } });
+
+        gsap.to(two.current, { x: 0, duration: 0.5, opacity: 1, delay: 1, scrollTrigger: {
+                trigger: ".oferta",
+                start: "top 50%"
+            } });
+
+        gsap.to(one.current, { x: 0, duration: 0.5, opacity: 1, delay: 1.5, scrollTrigger: {
+                trigger: ".oferta",
+                start: "top 50%"
+            } });
+
+
+    }, []);
 
     return (<section className="oferta section" id="oferta">
         <h2>Oferta</h2>
         <div className="ofertaGrid">
-            <div ref={leftTop} className="ofertaItem">
+            <div ref={one} className="ofertaItem">
                 <div className="iconSection">
                     <img src={require("../../static/img/www.png")} alt="strony-internetowe" />
                 </div>
@@ -23,7 +53,7 @@ const Oferta = () => {
                 </ul>
             </div>
 
-            <div ref={rightTop} className="ofertaItem">
+            <div ref={two} className="ofertaItem">
                 <div className="iconSection">
                     <img src={require("../../static/img/reklamy.png")} alt="reklamy" />
                 </div>
@@ -35,7 +65,7 @@ const Oferta = () => {
                 </ul>
             </div>
 
-            <div ref={leftBottom} className="ofertaItem">
+            <div ref={three} className="ofertaItem">
                 <div className="iconSection">
                     <img src={require("../../static/img/konsultacje.png")} alt="konsultacje" />
                 </div>
@@ -47,7 +77,7 @@ const Oferta = () => {
                 </ul>
             </div>
 
-            <div ref={rightBottom} className="ofertaItem">
+            <div ref={four} className="ofertaItem">
                 <div className="iconSection">
                     <img src={require("../../static/img/copywriting.png")} alt="copywriting" />
                 </div>

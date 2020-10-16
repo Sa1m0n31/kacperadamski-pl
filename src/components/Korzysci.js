@@ -10,15 +10,7 @@ const Korzysci = () => {
     const propozycje = useRef(null);
 
     useEffect(() => {
-        console.log(header.current);
-        gsap.fromTo([header.current, caption.current], {opacity: 0}, {opacity: 1, duration: 1, scrollTrigger: {
-            trigger: ".korzysci",
-            start: "top 90%"
-            }});
-        gsap.fromTo(propozycje.current, {opacity: 0}, {opacity: 1, duration: 2, scrollTrigger: {
-            trigger: ".korzysci",
-            start: "top 80%"
-            }});
+
     }, []);
 
 

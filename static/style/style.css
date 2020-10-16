@@ -161,6 +161,10 @@ a {
     height: 100vh !important;
 }
 
+.landingPage .landingPageImg img {
+    background-attachment: fixed !important;
+}
+
 .landingPage .gatsby-image-wrapper {
     display: flex;
     justify-content: center;
@@ -351,7 +355,6 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 500px;
     position: relative;
 }
 
@@ -472,7 +475,7 @@ a {
     -moz-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
     box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
     width: 15vw;
-    margin: 20px;
+    margin: 20px 0;
 }
 
 @media(min-width: 2000px) {
@@ -534,11 +537,11 @@ a {
     justify-content: center;
     margin: 10px 0;
     text-align: center;
+    color: #363636;
 }
 
 .oferta .ofertaGrid .ofertaItem ul li img {
     margin-right: 1vw;
-    color: #363636;
 }
 
 /* KONTAKT */
@@ -912,7 +915,7 @@ footer .right input {
 }
 
 footer .right button {
-    background-color: #e30e32;
+    background-color: #27e59e;
     color: white;
     border: none;
     outline: none;
@@ -923,11 +926,11 @@ footer .right button {
 }
 
 footer .right button:hover {
-    background-color: #B30820;
+    background-color: #16D48D;
 }
 
 footer .bottom {
-    border-top: 1px solid #e30e32;
+    border-top: 1px solid #27e59e;
     border-bottom: none;
     grid-column: 1 / span 2;
     grid-row: 2;
