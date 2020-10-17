@@ -154,11 +154,13 @@ a {
     flex-direction: column;
     align-items: center;
     color: white;
+    min-height: 800px;
 }
 
 .landingPage .landingPageImg {
     width: 100% !important;
     height: 100vh !important;
+    min-height: 800px;
 }
 
 .landingPage .landingPageImg img {
@@ -321,7 +323,7 @@ a {
 /* KORZYSCI */
 
 .korzysci {
-    background-color: #ffffff;
+    background-color: #F2F2F2;
     font-family: Cantarell, sans-serif;
     display: flex;
     flex-direction: column;
@@ -331,151 +333,140 @@ a {
 .korzysci h2, .korzysci h4, .korzysci p {
     text-align: center;
     width: 70%;
-    color: #363636;
+    color: #504F4F;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .korzysci h2 {
+    position: relative;
+    font-weight: 700;
     padding: 4vh;
-}
-
-.korzysci h2 {
     font-size: calc(1.5em + 16 * ((100vw - 700px)/900));
 }
 
-.korzysci .korzysciP {
-    padding: 4vh;
-}
-
-.korzysci .korzysciP, .korzysci h4 {
-    font-size: calc(13px + 4 * ((100vw - 700px)/900));
+.korzysci h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 150px;
+    background-color: #27e59e;
 }
 
 .korzysci .propozycjeContainer {
-    margin-top: 4vh;
+    margin: 30px 0 0 50px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 30px 0 100px 0;
+    width: 90vw;
+}
+
+@media(min-width: 1800px) {
+    .korzysci .propozycjeContainer .propozycjeItem {
+        margin: 0 50px;
+    }
+}
+
+.korzysci .propozycjeContainer .propozycjeItem {
+    display: flex;
+}
+
+.korzysci .propozycjeContainer .propozycjeItem .image .number {
+    color: #CECECE;
+    font-weight: 900;
+    font-size: 132px;
+    font-family: 'Barlow Condensed', sans-serif;
+    margin-top: -30px;
+}
+
+.korzysci .propozycjeContainer .propozycjeItem .image {
+    width: 160px;
     position: relative;
 }
 
-.korzysci .propozycjeContainer .overlayPropozycje {
-    width: 100%;
-    height: 500px;
-    background-color: white;
+.korzysci .propozycjeContainer .propozycjeItem:first-child .image {
+    width: 120px;
+    position: relative;
+}
+
+.korzysci .propozycjeContainer .propozycjeItem:first-child .textWrap {
+    width: 350px;
+    position: relative;
+}
+
+.korzysci .propozycjeContainer .propozycjeItem .image img {
     position: absolute;
-    z-index: 300;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 90px;
+    height: 90px;
 }
 
-.korzysci .propozycjeStrzalki {
-    width: 80%;
-    height: 30vh;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 8vw 25vw 8vw 25vw 8vw;
-    grid-template-rows: 12vh 20vh;
-    grid-row-gap: 2vh;
-    justify-items: center;
-    align-items: center;
+.korzysci .propozycjeContainer .propozycjeItem .image .img-2 {
+    left: 50px;
 }
 
-.korzysci .propozycjeStrzalki .liniaPrzerywana {
-    width: 100% !important;
+.korzysci .propozycjeContainer .propozycjeItem .image .img-3 {
+    left: 50px;
 }
 
-.korzysci .propozycjeStrzalki .cyfra {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #363636;
-    color: white;
+.korzysci .propozycjeContainer .propozycjeItem .textWrap {
+    width: 300px;
+}
+
+.korzysci .propozycjeContainer .propozycjeItem .text, .korzysci .propozycjeContainer .propozycjeItem .title {
     width: 100%;
-    height: 100%;
-    font-size: 2em;
-    font-weight: 100;
+    text-align: left;
 }
 
-.korzysci .iconNumber {
-    width: 100px;
-    height: 100px;
-}
-
-.korzysci .dlonie {
-    grid-column: 3;
-}
-
-.korzysci .zegar {
-    grid-column: 5;
-}
-
-.korzysci .propozycjeContent {
-    display: grid;
-    grid-template-columns: 5vw 14vw 19vw 14vw 19vw 14vw 5vw;
-    grid-template-rows: 12vh 20vh;
-    text-align: center;
-    margin-top: 2vh;
-}
-
-.korzysci .propozycjeContent h3 {
-    text-align: center;
-    font-size: calc(12px + 4 * ((100vw - 700px)/900));
-}
-
-.korzysci .propozycjeContent .h3First {
-    grid-column: 2;
-}
-
-.korzysci .propozycjeContent .h3Second {
-    grid-column: 4;
-}
-
-.korzysci .propozycjeContent .h3Third {
-    grid-column: 6;
-}
-
-.korzysci .propozycjeContent p {
-    width: 100%;
-    font-size: 13px;
-}
-
-.korzysci .propozycjeContent .pFirst {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.korzysci .propozycjeContent .pSecond {
-    grid-column: 4;
-    grid-row: 2;
-}
-
-.korzysci .propozycjeContent .pThird {
-    grid-column: 6;
-    grid-row: 2;
+.korzysci .propozycjeContainer .propozycjeItem .title {
+    margin: 20px 0 20px 0;
 }
 
 /* OFERTA */
 
 .oferta {
     display: flex;
-    font-family: Cantarell, sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     padding: 5vh 0;
     background-color: #ffffff;
     flex-direction: column;
     align-items: center;
+    font-weight: 700;
 }
 
 .oferta h2 {
-    font-size: 50px;
+    position: relative;
+    font-size: calc(40px + 30 * ((100vw - 700px)/(1500)));
     margin: 50px;
-    color: #363636;
+    padding-bottom: 15px;
+    color: #504F4F;
+}
+
+.oferta h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 150px;
+    background-color: #27e59e;
 }
 
 .oferta .ofertaGrid .ofertaItem {
     background-color: #f6f6f6;
-    -webkit-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
-    box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 20px #1225D433;
+    -moz-box-shadow: 0px 0px 20px #1225D433;
+    box-shadow: 0px 0px 20px #1225D433;
     width: 15vw;
     margin: 20px 0;
+    border-radius: 25px;
 }
 
 @media(min-width: 2000px) {
@@ -513,17 +504,18 @@ a {
 }
 
 .oferta .ofertaGrid .ofertaItem h4 {
-    background-color: #363636;
+    background-color: #0F32A2;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
     font-weight: 100;
-    font-size: 1.1em;
     letter-spacing: 1px;
-    margin-bottom: 2vh;
     text-align: center;
+    width: 80%;
+    border-radius: 50px;
+    margin: auto auto 25px auto;
 }
 
 .oferta .ofertaGrid .ofertaItem ul {
@@ -537,7 +529,10 @@ a {
     justify-content: center;
     margin: 10px 0;
     text-align: center;
-    color: #363636;
+    color: #504F4F;
+    font-weight: 400;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: calc(15px + 10 * ((100vw - 700px)/(1500)));
 }
 
 .oferta .ofertaGrid .ofertaItem ul li img {
@@ -775,7 +770,6 @@ section.zaufaliNam > div > div > div > div {
     grid-template-columns: 45vw 45vw;
     grid-template-rows: 100%;
     grid-column-gap: 5vw;
-    height: 600px;
 }
 
 .omnieInner .omnieTekst {

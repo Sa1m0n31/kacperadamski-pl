@@ -5,49 +5,67 @@ import { gsap, ScrollTrigger } from 'gsap/all';
 const Korzysci = () => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const header = useRef(null);
-    const caption = useRef(null);
-    const propozycje = useRef(null);
+    const one = useRef(null);
+    const two = useRef(null);
+    const three = useRef(null);
 
     useEffect(() => {
-
+        gsap.set([one.current, two.current, three.current], { x: -2000 });
+        gsap.to(three.current, { x: 0, duration: .5, scrollTrigger: {
+            trigger: ".korzysci",
+            start: "top 70%"
+            } });
+        gsap.to(two.current, { x: 0, duration: .5, delay: .5, scrollTrigger: {
+                trigger: ".korzysci",
+                start: "top 70%"
+            } });
+        gsap.to(one.current, { x: 0, duration: .5, delay: 1, scrollTrigger: {
+                trigger: ".korzysci",
+                start: "top 70%"
+            } });
     }, []);
 
 
     return (<section className="korzysci section">
-        <div className="mobileOnly korzysciHeader">
-            <h3>Kacper Adamski</h3>
-            <h4>Twoja marka w Internecie</h4>
-        </div>
-        <h2 ref={header}>Co mogę Ci <span className="greenFont">zaproponować</span>?</h2>
-        <p ref={caption} className="korzysciP">Sprawdź moją ofertę i skontaktuj się ze mną aby dobrać <span className="bold">najskuteczniejsze</span> dla ustalonych przez Ciebie celów działania</p>
-        <div ref={propozycje} className="propozycjeContainer">
-            <div className="propozycjeStrzalki">
-                <div className="cyfra desktopOnly">1</div>
-                <img className="liniaPrzerywana desktopOnly" src={require("../../static/img/linia-przerywana.png")} alt="linia-przerywana" />
-                <div className="cyfra desktopOnly">2</div>
-                <img className="liniaPrzerywana desktopOnly" src={require("../../static/img/linia-przerywana.png")} alt="linia-przerywana" />
-                <div className="cyfra desktopOnly">3</div>
-
-                <img className="iconNumber gwarancja" src={require("../../static/img/gwarancja-ikonka.png")} alt="gwarancja-jakosci" />
-                <h3 className="h3First mobileOnly">Gwarancja doboru najkorzystniejszych rozwiązań</h3>
-                <p className="pFirst mobileOnly">Zapewniam indywidualne podejście do klienta i dobranie działań pod Twoje potrzeby i cele.</p>
-
-                <img className="iconNumber dlonie" src={require("../../static/img/graba.png")} alt="gwarancja-jakosci" />
-                <h3 className="h3Second mobileOnly">Korzystne warunki współpracy</h3>
-                <p className="pSecond mobileOnly">Najniższe ceny i najwyższa jakość świadczonych usług. Na pewno uda nam się dogadać!</p>
-
-                <img className="iconNumber zegar" src={require("../../static/img/zegar.png")} alt="gwarancja-jakosci" />
-                <h3 className="h3Third mobileOnly">Terminowa<br/>współpraca</h3>
-                <p className="pThird mobileOnly">Terminowość uważam za jedną ze swoich najmocniejszych stron. Skontaktuj się ze mną, a nie będziesz się musiał martwić o deadliny.</p>
+        <h2>Co mogę Ci zaproponować?</h2>
+        <div className="propozycjeContainer">
+            <div ref={one} className="propozycjeItem">
+                <div className="image">
+                    <h3 className="number">1</h3>
+                    <img src={require("../../static/img/sure.png")} alt="gwarancja" className="img-1" />
+                </div>
+                <div className="textWrap">
+                    <h4 className="title">Gwarancja doboru najkorzystniejszych rozwiązań</h4>
+                    <p className="text">
+                        Zapewniam indywidualne podejście do klienta i dobranie działań pod Twoje potrzeby i cele.
+                    </p>
+                </div>
             </div>
-            <div className="propozycjeContent desktopOnly">
-                <h3 className="h3First">Gwarancja doboru najkorzystniejszych rozwiązań</h3>
-                <p className="pFirst">Zapewniam indywidualne podejście do klienta i dobranie działań pod Twoje potrzeby i cele</p>
-                <h3 className="h3Second">Korzystne warunki współpracy</h3>
-                <p className="pSecond">Najniższe ceny i najwyższa jakość świadczonych usług. Na pewno uda nam się dogadać!</p>
-                <h3 className="h3Third">Terminowa<br/>współpraca</h3>
-                <p className="pThird">Terminowość uważam za jedną ze swoich najmocniejszych stron. Skontaktuj się ze mną, a nie będziesz się musiał martwić o deadliny.</p>
+
+            <div ref={two} className="propozycjeItem">
+                <div className="image">
+                    <h3 className="number">2</h3>
+                    <img src={require("../../static/img/profit.png")} alt="korzysc" className="img-2" />
+                </div>
+                <div className="textWrap">
+                    <h4 className="title">Korzystne warunki współpracy</h4>
+                    <p className="text">
+                        Najniższe ceny i najwyższa jakość świadczonych usług. Na pewno uda nam się dogadać!
+                    </p>
+                </div>
+            </div>
+
+            <div ref={three} className="propozycjeItem">
+                <div className="image">
+                    <h3 className="number">3</h3>
+                    <img src={require("../../static/img/zegar.png")} alt="terminowosc" className="img-3" />
+                </div>
+                <div className="textWrap">
+                    <h4 className="title">Terminowa współpraca</h4>
+                    <p className="text">
+                        Skontaktuj się ze mną, a nie będziesz się musiał martwić o deadliny.
+                    </p>
+                </div>
             </div>
         </div>
     </section>)

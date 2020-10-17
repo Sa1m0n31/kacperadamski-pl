@@ -1,10 +1,43 @@
 @media(max-width: 500px) {
-    .oferta .ofertaGrid {
+    .korzysci .propozycjeContainer {
+        margin: 0 !important;
+        padding-bottom: 20px !important;
+    }
 
+    .korzysci .propozycjeContainer .propozycjeItem .image {
+        width: 100px !important;
+        padding-left: 20px;
+    }
+
+    .korzysci .propozycjeContainer .propozycjeItem .textWrap {
+        width: 200px !important;
+        font-size: 15px;
+    }
+
+    .korzysci .propozycjeContainer .propozycjeItem .image .number {
+        font-size: 70px;
+        margin-top: 30px !important;
+    }
+
+    .korzysci .propozycjeContainer .propozycjeItem .image img {
+        width: 40px;
+        height: 40px;
+        left: 40px !important;
+        top: 80px !important;
+    }
+
+    .korzysci .propozycjeContainer .propozycjeItem .image .img-1 {
+        left: 30px !important;
     }
 }
 
 @media(max-width: 700px) {
+    /* LANDING PAGE */
+    .landingPage, .landingPage .landingPageImg {
+        min-height: 0 !important;
+        height: 100vh !important;
+    }
+
     /* TOP BAR */
 
     .topBar .logoContainer img {
@@ -157,8 +190,10 @@
 
     /* LANDING PAGE */
 
-    .landingPage, .landingPage .landingPageImg {
-        height: 300px !important;
+    @media(min-width: 700px) {
+        .landingPage, .landingPage .landingPageImg {
+            height: 300px !important;
+        }
     }
 
     /* KORZYSCI */
@@ -171,30 +206,6 @@
         width: 90vw;
         padding: 20px;
         border-bottom: 1px solid #a8a8a8;
-    }
-
-    .propozycjeStrzalki {
-        display: flex !important;
-        flex-direction: column;
-        height: auto !important;
-    }
-
-    .propozycjeStrzalki > * {
-        margin: 8px 0;
-    }
-
-    .propozycjeStrzalki > p {
-        padding-bottom: 25px;
-        font-size: 13px;
-        border-bottom: 1px solid #e30e32;
-    }
-
-    .propozycjeStrzalki > img {
-        margin-top: 25px;
-    }
-
-    .propozycjeStrzalki h3 {
-        text-align: center;
     }
 
     /* OFERTA */
@@ -524,5 +535,15 @@
 
     .oferta .ofertaGrid .ofertaItem {
         width: 100%;
+    }
+}
+
+@media(max-width: 1500px) {
+    .propozycjeContainer {
+        flex-direction: column;
+    }
+
+    .korzysci .propozycjeContainer .propozycjeItem {
+        margin: 15px 0;
     }
 }
