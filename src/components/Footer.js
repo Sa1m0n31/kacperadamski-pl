@@ -111,7 +111,6 @@ export default class Footer extends React.Component {
 
 
             <div className="left">
-                <img className="footerLogo" src={require("../../static/img/lukasz-burski-footer.png")} alt="Lukasz Burski" />
                 <ul className="menuFooter">
                     <li>
                         <Link
@@ -171,8 +170,8 @@ export default class Footer extends React.Component {
                 </form>
             </div>
             <div className="bottom">
-                <h6>Copyright &copy; LukaszBurski.pl</h6>
-                <h6>Designed and created by <a href="https://stronnnka.pl" target="_blank">stronnnka.pl</a></h6>
+                <h6>Copyright &copy; kacperadamski.pl</h6>
+                <h6>Designed and created by <a href="https://skylo.pl" target="_blank">Skylo.pl</a></h6>
             </div>
         </footer>)
     }
