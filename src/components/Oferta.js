@@ -47,7 +47,7 @@ const Oferta = () => {
                 start: "top 50%"
             } });
     }
-    else {
+    else if((width > 300)&&(width < 700)) {
         gsap.to(one.current, { x: 0, duration: 0.5, opacity: 1, scrollTrigger: {
                 trigger: ".oferta",
                 start: "top 50%"

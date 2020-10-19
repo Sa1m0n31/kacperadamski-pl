@@ -22,7 +22,6 @@ const Korzysci = () => {
         gsap.set([one.current, two.current, three.current], { y: 2000 });
     }, []);
 
-    console.log("Width: " + width);
     if(width > 700) {
         gsap.to(three.current, { y: 0, duration: .5, scrollTrigger: {
                 trigger: ".korzysci",
@@ -37,7 +36,7 @@ const Korzysci = () => {
                 start: "top 70%"
             } });
     }
-    else {
+    else if((width > 300)&&(width < 700)) {
         gsap.to(one.current, { y: 0, duration: .5, scrollTrigger: {
                 trigger: ".korzysci",
                 start: "top 70%"
