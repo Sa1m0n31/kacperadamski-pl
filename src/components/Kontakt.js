@@ -48,17 +48,9 @@ export default class Kontakt extends React.Component {
         loadReCaptcha("6Le2asoZAAAAAD15aNFRC_BOttySbziLaTDkMmSD");
         Modal.setAppElement(".kontakt");
 
-        gsap.fromTo(this.state.form.current, { opacity: 0 }, { opacity: 1, duration: 2, scrollTrigger: {
+        gsap.fromTo(this.state.kontaktHeader.current, {x: 200, opacity: 0}, {x: 0, opacity: 1, duration: .5, scrollTrigger: {
             trigger: ".kontakt",
-                start: "top 60%",
-                end: "top 40%",
-                scrub: 1
-            } });
-        gsap.fromTo(this.state.kontaktHeader.current, {opacity: 0}, {opacity: 1, duration: 2, scrollTrigger: {
-            trigger: ".kontakt",
-                start: "top 70%",
-                end: "top, 50%",
-                scrub: 1
+                start: "top 70%"
             }})
     }
 

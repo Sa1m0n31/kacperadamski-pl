@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { gsap, ScrollTrigger } from 'gsap/all';
 
@@ -9,22 +9,48 @@ const Korzysci = () => {
     const two = useRef(null);
     const three = useRef(null);
 
+    let [width, setWidth] = useState(0);
+
     useEffect(() => {
-        gsap.set([one.current, two.current, three.current], { x: -2000 });
-        gsap.to(three.current, { x: 0, duration: .5, scrollTrigger: {
-            trigger: ".korzysci",
-            start: "top 70%"
-            } });
-        gsap.to(two.current, { x: 0, duration: .5, delay: .5, scrollTrigger: {
-                trigger: ".korzysci",
-                start: "top 70%"
-            } });
-        gsap.to(one.current, { x: 0, duration: .5, delay: 1, scrollTrigger: {
-                trigger: ".korzysci",
-                start: "top 70%"
-            } });
+        if(typeof window !== 'undefined') {
+            setWidth(window.innerWidth);
+            window.addEventListener("resize", () => {
+               setWidth(window.innerWidth);
+            });
+        }
+
+        gsap.set([one.current, two.current, three.current], { y: 2000 });
     }, []);
 
+    console.log("Width: " + width);
+    if(width > 700) {
+        gsap.to(three.current, { y: 0, duration: .5, scrollTrigger: {
+                trigger: ".korzysci",
+                start: "top 70%"
+            } });
+        gsap.to(two.current, { y: 0, duration: .5, delay: .5, scrollTrigger: {
+                trigger: ".korzysci",
+                start: "top 70%"
+            } });
+        gsap.to(one.current, { y: 0, duration: .5, delay: 1, scrollTrigger: {
+                trigger: ".korzysci",
+                start: "top 70%"
+            } });
+    }
+    else {
+        gsap.to(one.current, { y: 0, duration: .5, scrollTrigger: {
+                trigger: ".korzysci",
+                start: "top 70%"
+            } });
+        gsap.to(two.current, { y: 0, duration: .5, delay: .5, scrollTrigger: {
+                trigger: ".korzysci",
+                start: "top 40%"
+            } });
+        gsap.to(three.current, { y: 0, duration: .5, delay: 1, scrollTrigger: {
+                trigger: ".korzysci",
+                start: "top 20%"
+            } });
+    }
 
     return (<section className="korzysci section">
         <h2>Co mogę Ci zaproponować?</h2>

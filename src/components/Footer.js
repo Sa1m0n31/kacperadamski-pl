@@ -133,19 +133,7 @@ export default class Footer extends React.Component {
                             smooth={true}
                             duration={500}>Oferta</Link>
                     </li>
-                    <li>
-                        <Link
-                            activeClass="active"
-                            to="zaufaliNam"
-                            smooth={true}
-                            duration={500}>Referencje</Link>
-                    </li>
                 </ul>
-                <div className="socialMedia">
-                    <img src={require("../../static/img/facebook.png")} alt="facebook" />
-                    <img src={require("../../static/img/instagram.png")} alt="instagram" />
-                    <img src={require("../../static/img/linked.png")} alt="linkedin" />
-                </div>
             </div>
             <div className="right">
                 <h3>Zostaw swojego maila</h3>

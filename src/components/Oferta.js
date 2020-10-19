@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { gsap, ScrollTrigger, Bounce } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger, Bounce);
@@ -10,11 +10,23 @@ const Oferta = () => {
     const three = useRef(null);
     const four = useRef(null);
 
+    let [width, setWidth] = useState(0);
+
     useEffect(() => {
-        const tl = gsap.timeline();
 
-        gsap.set([one.current, two.current, three.current, four.current], { x: -3000, opacity: 0 });
+        if(typeof window !== 'undefined') {
+            setWidth(window.innerWidth);
+            window.addEventListener("resize", () => {
+               setWidth(window.innerWidth);
+            });
 
+            gsap.set([one.current, two.current, three.current, four.current], { x: -3000, opacity: 0 });
+        }
+
+
+    }, []);
+
+    if(width > 700) {
         gsap.to(four.current, { x: 0, duration: 0.5, opacity: 1, scrollTrigger: {
                 trigger: ".oferta",
                 start: "top 50%"
@@ -34,9 +46,28 @@ const Oferta = () => {
                 trigger: ".oferta",
                 start: "top 50%"
             } });
+    }
+    else {
+        gsap.to(one.current, { x: 0, duration: 0.5, opacity: 1, scrollTrigger: {
+                trigger: ".oferta",
+                start: "top 50%"
+            } });
 
+        gsap.to(two.current, { x: 0, duration: 0.5, opacity: 1, delay: 0.5, scrollTrigger: {
+                trigger: ".second",
+                start: "top 100%"
+            } });
 
-    }, []);
+        gsap.to(three.current, { x: 0, duration: 0.5, opacity: 1, delay: 1, scrollTrigger: {
+                trigger: ".third",
+                start: "top 100%"
+            } });
+
+        gsap.to(four.current, { x: 0, duration: 0.5, opacity: 1, delay: 1.5, scrollTrigger: {
+                trigger: ".fourth",
+                start: "top 100%"
+            } });
+    }
 
     return (<section className="oferta section" id="oferta">
         <h2>Oferta</h2>
@@ -53,7 +84,7 @@ const Oferta = () => {
                 </ul>
             </div>
 
-            <div ref={two} className="ofertaItem">
+            <div ref={two} className="ofertaItem second">
                 <div className="iconSection">
                     <img src={require("../../static/img/reklamy.png")} alt="reklamy" />
                 </div>
@@ -65,7 +96,7 @@ const Oferta = () => {
                 </ul>
             </div>
 
-            <div ref={three} className="ofertaItem">
+            <div ref={three} className="ofertaItem third">
                 <div className="iconSection">
                     <img src={require("../../static/img/konsultacje.png")} alt="konsultacje" />
                 </div>
@@ -77,7 +108,7 @@ const Oferta = () => {
                 </ul>
             </div>
 
-            <div ref={four} className="ofertaItem">
+            <div ref={four} className="ofertaItem fourth">
                 <div className="iconSection">
                     <img src={require("../../static/img/copywriting.png")} alt="copywriting" />
                 </div>

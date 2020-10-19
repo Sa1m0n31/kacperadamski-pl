@@ -3,9 +3,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import Img from 'gatsby-image';
 
 import { gsap, ScrollTrigger } from 'gsap/all';
-import Modal from "react-modal";
-import {Link} from "react-scroll";
-import {ReCaptcha} from "react-recaptcha-v3";
 gsap.registerPlugin(ScrollTrigger);
 
 const OMnie = () => {
@@ -23,6 +20,7 @@ const OMnie = () => {
                setWidth(window.innerWidth);
            });
        }
+
     });
 
     const data = useStaticQuery(graphql`
@@ -60,7 +58,7 @@ const OMnie = () => {
                 </div>
             </div>
         </div>) : (<div className="omnieInnerMobile">
-            <h2 className="omnieHeader"><span className="opacityh2">Cześć, witajcie! Nazywam się</span><br/><span className="superBold">Kacper Adamski</span><br/><span className='opacityh2'>i jestem tu po to, by Ci pomóc</span></h2>
+            <h2 className="omnieHeader"><span className="opacityh2">Cześć, witaj! Nazywam się</span><br/><span className="superBold">Kacper Adamski</span><br/><span className='opacityh2'>i jestem tu po to, by Ci pomóc</span></h2>
             <div className="omnieImgContainer">
                 <Img className="omnieImg" imgStyle={{objectPosition: '90% 80%'}} fluid={data.landingPage.childImageSharp.fluid} alt="marketing" />
             </div>

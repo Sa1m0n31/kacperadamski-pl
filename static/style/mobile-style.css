@@ -33,73 +33,57 @@
 
 @media(max-width: 700px) {
     /* LANDING PAGE */
+
     .landingPage, .landingPage .landingPageImg {
         min-height: 0 !important;
         height: 100vh !important;
     }
 
-    /* TOP BAR */
-
-    .topBar .logoContainer img {
-        width: 150px;
-        height: 15px;
+    .only-700 {
+        display: none !important;
     }
 
-    .topBar .callToMe {
-        display: flex;
-        width: 40vw;
-        right: 4vw;
-        justify-content: flex-end;
+    .landingPage .topMenu {
+        justify-content: center;
+        margin: 50px 0 !important;
+    }
+
+    .landingPage .topMenu h2 {
+        font-size: 1em;
+    }
+
+    .landingPage .landingContent {
+        left: 50%;
+        top: 150px;
+        transform: translateX(-50%);
         align-items: center;
     }
 
-    .topBar .callToMe img {
-        width: 25px;
-        height: 25px;
-    }
-
-    .topBar .callToMe h3 {
-        display: none;
-    }
-
-    .topBar .callToMe h4 {
-        font-size: 14px;
-    }
-
-
-    /* LANDING PAGE */
-
-
-    /* KORZYSCI */
-
-    .korzysci .korzysciP {
-        padding: 0 0 3vh 0;
-    }
-}
-
-@media(max-width: 700px) {
-    /* LANDING PAGE */
-
-    .landingPage .messengerContainer {
-        padding: 2vh 1vw 2vh 1vw;
+    .landingPage .landingContent h1 {
+        font-size: 35px;
         width: 80vw !important;
-        top: 55%;
+        justify-content: center;
+        text-align: center;
+        white-space: pre-wrap;
     }
 
-    .landingPage .messengerContainer .messengerInner {
-        width: 70%;
+    .landingPage .landingContent h1::before {
+        display: none !important;
     }
 
-    .landingPage .messengerInner a {
-        grid-template-columns: 30% 70%;
+    .landingPage .landingContent h2 {
+        text-align: center;
+        font-size: 15px;
+        order: 2;
     }
 
-    .landingPage .haslo {
-        display: none;
-    }
-
-    .messengerModalInner {
-        margin: 20px 0 !important;
+    .landingPage .landingContent .wspolpracaBtn {
+        height: 60px;
+        width: 170px;
+        font-size: 18px;
+        order: 1;
+        margin: 20px 0;
+        background-color: #27e59e;
     }
 
 
@@ -188,12 +172,41 @@
         opacity: 1 !important;
     }
 
+    .upBtn {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .upBtn img {
+        width: 20px;
+        height: 20px;
+    }
+
     /* LANDING PAGE */
 
     @media(min-width: 700px) {
         .landingPage, .landingPage .landingPageImg {
             height: 300px !important;
         }
+
+        .landingPage .topMenu {
+            margin: 50px 0;
+            width: 100%;
+        }
+
+        .landingPage .topMenu h2 {
+            position: absolute;
+            top: 0;
+            left: 50px;
+        }
+
+        .landingPage .landingContent {
+            left: 50px;
+        }
+
     }
 
     /* KORZYSCI */
@@ -243,7 +256,7 @@
     }
 
     .kontakt .kontaktHeader {
-        border-left: 5px solid #e30e32;
+        border-left: 5px solid #27e59e;
         padding: 0 7px;
     }
 
@@ -374,11 +387,16 @@
         margin-top: 20px;
     }
 
+    .omnieSection .omnieInnerMobile h2 {
+        font-size: calc(24px + 12 * ((100vw - 900px)/(600)));
+        border-left-width: 5px;
+    }
+
     /* FOOTER */
 
     footer {
         grid-template-columns: 100%;
-        grid-template-rows: 250px 200px 40px !important;
+        grid-template-rows: 60px 200px 40px !important;
     }
 
     footer .left {
