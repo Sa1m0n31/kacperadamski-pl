@@ -1,5 +1,7 @@
-Website for marketing specialist.
+Company website for marketing sepcialist.
 
-Stack: React, Gatsby, gsap.
+<b>Stack</b>: React, Gatsby, SASS
 
-Website: https://kacperadamski.pl
+<b>Libraries</b>: GSAP, react-helmet, react-recaptcha-v3
+
+Website available at: https://kacperadamski.pl
